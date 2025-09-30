@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h1>이미지에서 텍스트 추출</h1>
+        <form method="POST" enctype="multipart/form-data" action="{% url 'books:upload' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="image">이미지 파일 선택:</label>
+                <input type="file" name="image" id="image" class="form-control-file" accept="image/*" required>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">텍스트 추출</button>
+        </form>
+    </div>
+{% endblock content %}

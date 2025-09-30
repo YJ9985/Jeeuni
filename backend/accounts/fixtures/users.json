@@ -1,0 +1,44 @@
+[
+    {
+        "model": "accounts.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$1000000$JZpcwo3hEHpYoRs0owPoZk$HygscZ687dJ8s/bAQ11bz5gahNPt6TBRREXIq6muhdg=",
+            "last_login": null,
+            "is_superuser": true,
+            "username": "admin@gmail.com",
+            "first_name": "홍",
+            "last_name": "길동",
+            "email": "admin@gmail.com",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-05-25T12:37:54.137Z",
+            "kakao_id": null,
+            "birth_date": "2000-01-01",
+            "provider": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "accounts.user",
+        "pk": 2,
+        "fields": {
+            "password": "pbkdf2_sha256$1000000$RjpOqaRlw91wYRHMfVkuQK$wDrLg9NP97Bh/Pg28g/2WZQvAU0n9LBPdlx0PN7HhnM=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "qwer@gmail.com",
+            "first_name": "김",
+            "last_name": "나라",
+            "email": "qwer@gmail.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2025-05-25T12:39:27.791Z",
+            "kakao_id": null,
+            "birth_date": "2005-05-25",
+            "provider": "local",
+            "groups": [],
+            "user_permissions": []
+        }
+    }
+]

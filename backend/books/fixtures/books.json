@@ -1,0 +1,1427 @@
+[
+    {
+        "model": "books.book",
+        "pk": 1,
+        "fields": {
+            "category": 1,
+            "title": "혼모노",
+            "author": "성해나",
+            "cover": "https://image.aladin.co.kr/product/36101/66/cover200/893643974x_2.jpg",
+            "description": "작품마다 치밀한 취재와 정교한 구성을 바탕으로 한 개성적인 캐릭터와 강렬하고도 서늘한 서사로 평단과 독자의 주목을 고루 받으며 새로운 세대의 리얼리즘을 열어가고 있다 평가받는 작가 성해나가 두번째 소설집 『혼모노』를 선보인다.",
+            "pub_date": "2025-03-28",
+            "is_bestseller": true,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 2,
+        "fields": {
+            "category": 1,
+            "title": "소년이 온다",
+            "author": "한강",
+            "cover": "https://image.aladin.co.kr/product/4086/97/cover200/8936434128_2.jpg",
+            "description": "섬세한 감수성과 치밀한 문장으로 인간 존재의 본질을 탐구해온 작가 한강의 여섯번째 장편소설. '상처의 구조에 대한 투시와 천착의 서사'를 통해 한강만이 풀어낼 수 있는 방식으로 1980년 5월을 새롭게 조명한다.",
+            "pub_date": "2014-05-19",
+            "is_bestseller": true,
+            "is_new": false,
+            "is_J_recommended": true
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 3,
+        "fields": {
+            "category": 1,
+            "title": "모순",
+            "author": "양귀자",
+            "cover": "https://image.aladin.co.kr/product/2584/37/cover200/8998441012_3.jpg",
+            "description": "작가 양귀자가 1998년 펴낸 세 번째 장편소설로, 책이 나온 지 한 달 만에 무서운 속도로 베스트셀러 1위에 진입, 출판계를 놀라게 하고 그해 최고의 베스트셀러로 자리 잡으면서 ‘양귀자 소설의 힘’을 다시 한 번 유감없이 보여준 소설이다.",
+            "pub_date": "2013-04-01",
+            "is_bestseller": true,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 4,
+        "fields": {
+            "category": 1,
+            "title": "첫 여름, 완주",
+            "author": "김금희",
+            "cover": "https://image.aladin.co.kr/product/36275/58/cover200/k692038832_2.jpg",
+            "description": "세심한 온정의 세계를 빚어내는 우리 시대의 작가 김금희의 장편소설. 돈을 갚지 않고 사라진 선배 고수미의 고향 완주 마을을 찾은 성우 손열매는 그곳에서 합동 장의사 겸 매점을 운영하는 수미 어머니의 집에 머물게 된다. 오갈 데 없는 처지에 목소리에까지 이상이 생긴 열매는 수미 어머니의 매점을 지키며 각양각색의 동네 사람들을 만난다.",
+            "pub_date": "2025-05-08",
+            "is_bestseller": true,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 5,
+        "fields": {
+            "category": 1,
+            "title": "고래눈이 내리다",
+            "author": "김보영",
+            "cover": "https://image.aladin.co.kr/product/36423/24/cover200/k162039192_1.jpg",
+            "description": "한국 SF를 대표하는 작가 중 한 명이자 세계 독자에게 각별한 사랑을 받아온 소설가 김보영이 《얼마나 닮았는가》 이후로 5년 만에 신작 소설집을 펴냈다. 그간 초기작을 복원하고 기존 작품에 결말을 내는 등의 작업을 이어왔지만, 이 책은 대부분 2020년대에 발표한 작품들로 묶인 신작들이 담겨 독자들에게 반가움을 안긴다.",
+            "pub_date": "2025-05-19",
+            "is_bestseller": true,
+            "is_new": true,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 6,
+        "fields": {
+            "category": 1,
+            "title": "채식주의자",
+            "author": "한강",
+            "cover": "https://image.aladin.co.kr/product/29137/2/cover200/8936434594_2.jpg",
+            "description": "2016년 인터내셔널 부커상을 수상하며 한국문학의 입지를 한단계 확장시킨 한강의 장편소설. 상처받은 영혼의 고통과 식물적 상상력의 강렬한 결합을 정교한 구성과 흡인력 있는 문체로 보여주며 섬뜩한 아름다움의 미학을 한강만의 방식으로 완성한 역작이다.",
+            "pub_date": "2022-03-28",
+            "is_bestseller": true,
+            "is_new": false,
+            "is_J_recommended": true
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 7,
+        "fields": {
+            "category": 1,
+            "title": "살아 있는 것은 아름답다",
+            "author": "신경림",
+            "cover": "https://image.aladin.co.kr/product/36415/59/cover200/8936425188_1.jpg",
+            "description": "2024년 5월 22일, 한국문학사에 위대한 발자취를 남긴 ‘작은 거인’ 고(故) 신경림 시인이 타계했다. 1956년 등단 이후 70년 가까운 세월 동안 세상에서 소외된 이들의 아픔을 어루만지며 그들과 함께 걸어온 시인은 생의 마지막 순간까지 펜을 놓지 않았다. 시인의 1주기를 맞아 출간되는 이번 시집은 생전 마지막으로 펴낸 『사진관집 이층』 이후 11년 만의 신작이다.",
+            "pub_date": "2025-05-16",
+            "is_bestseller": true,
+            "is_new": true,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 8,
+        "fields": {
+            "category": 1,
+            "title": "급류",
+            "author": "정대건",
+            "cover": "https://image.aladin.co.kr/product/30769/24/cover200/8937473402_1.jpg",
+            "description": "2020년 《한경신춘문예》에 장편소설 『GV 빌런 고태경』이 당선되어 작품 활동을 시작한 소설가 정대건의 두 번째 장편소설 『급류』가 오늘의 젊은 작가 시리즈 40번으로 출간되었다. 『급류』는 저수지와 계곡이 유명한 지방도시 ‘진평’을 배경으로, 열일곱 살 동갑내기인 ‘도담’과 ‘해솔’의 만남과 사랑을 그린 소설이다.",
+            "pub_date": "2022-12-22",
+            "is_bestseller": true,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 9,
+        "fields": {
+            "category": 1,
+            "title": "작별하지 않는다",
+            "author": "한강",
+            "cover": "https://image.aladin.co.kr/product/27877/5/cover200/8954682154_3.jpg",
+            "description": "2016년 『채식주의자』로 인터내셔널 부커상을 수상하고 2018년 『흰』으로 같은 상 최종 후보에 오른 한강 작가의 5년 만의 장편소설. 2019년 겨울부터 이듬해 봄까지 계간 『문학동네』에 전반부를 연재하며 큰 관심을 모은 작품이다.",
+            "pub_date": "2021-09-09",
+            "is_bestseller": true,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 10,
+        "fields": {
+            "category": 1,
+            "title": "파과",
+            "author": "구병모",
+            "cover": "https://image.aladin.co.kr/product/36127/91/cover200/k632038378_1.jpg",
+            "description": "한국 소설에 가장 강렬하게 새겨질 새로운 여성 서사를 탄생시킨 구병모 작가의 《파과》가 새 옷을 갈아입었다. 40여 년간 날카롭고 냉혹하게 청부 살인을 업으로 삼아온 60대 여성 킬러 ‘조각(爪角)’. 몸도 기억도 예전 같지 않게 삐걱거리기 시작하면서 이제는 퇴물 취급을 받는다.",
+            "pub_date": "2018-03-16",
+            "is_bestseller": true,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 11,
+        "fields": {
+            "category": 1,
+            "title": "룬의 아이들",
+            "author": "전민희",
+            "cover": "https://image.aladin.co.kr/product/36401/67/cover200/k012039783_1.jpg",
+            "description": "『룬의 아이들 - 윈터러』에 이은 2부 『룬의 아이들 - 데모닉』이 완결된 지 11년 만의 신작이다. 1부 ‘룬의 아이들’ 시리즈 3부에 해당하는 이번 작품은 실종된 오빠에 얽힌 비밀과 맞서 분투하는 공녀를 중심으로 ‘블러디드’라는 힘에 관한 이야기를 다루고 있다.",
+            "pub_date": "2025-05-08",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 12,
+        "fields": {
+            "category": 1,
+            "title": "서랍에 저녁을 넣어 두었다",
+            "author": "한강",
+            "cover": "https://image.aladin.co.kr/product/3335/59/cover200/8932024634_3.jpg",
+            "description": "'문학과지성 시인선' 438권. 인간 삶의 고독과 비애, 삶과 죽음의 경계에서 맞닥뜨리는 어떤 진실과 본질적인 정서들을 특유의 단단하고 시정 어린 문체로 새겨온 한강의 첫 시집. 틈틈이 쓰고 발표한 시들 가운데 60편을 추려 이번 시집을 묶었다.",
+            "pub_date": "2013-11-15",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 13,
+        "fields": {
+            "category": 1,
+            "title": "홍학의 자리",
+            "author": "정해연",
+            "cover": "https://image.aladin.co.kr/product/27587/94/cover200/8954681158_1.jpg",
+            "description": "10년 가까이 스릴러 장르에 매진하며 장편 단편 할 것 없이 독자들의 눈길을 사로잡는 작품을 발표한 정해연 작가의 신작. 프롤로그를 시작으로 총 21개의 챕터로 구성된 이 작품은 매 챕터마다 놀라운 전개와 탁월한 스토리텔링을 보여준다.",
+            "pub_date": "2021-07-26",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 14,
+        "fields": {
+            "category": 1,
+            "title": "대도시의 사랑법",
+            "author": "박상영",
+            "cover": "https://image.aladin.co.kr/product/36430/44/cover200/k272039390_1.jpg",
+            "description": "2018년 펴낸 첫 소설집으로 많은 젊은 독자들을 매료시킨 박상영의 두번째 책. 제10회 젊은작가상 대상 수상작 '우럭 한점 우주의 맛'을 비롯해 발표와 동시에 화제를 모았던 4편의 중단편을 수록한 연작 소설집이다.",
+            "pub_date": "2025-05-23",
+            "is_bestseller": false,
+            "is_new": true,
+            "is_J_recommended": true
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 15,
+        "fields": {
+            "category": 1,
+            "title": "탄금",
+            "author": "장다혜",
+            "cover": "https://image.aladin.co.kr/product/26317/84/cover200/s452038732_2.jpg",
+            "description": "장다혜 장편소설. 고가의 미술품 거래로 돈왕이라 불리게 된 조선의 거상 심열국. 어느 날 그의 외동아들 홍랑(8세)이 실종된다. 심열국과 민씨 부인은 수많은 재물과 사람을 풀어 아들을 찾고 시체에까지 현상금을 붙이지만 실마리도 찾지 못한다.",
+            "pub_date": "2021-02-26",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 16,
+        "fields": {
+            "category": 1,
+            "title": "마중도 배웅도 없이",
+            "author": "박준",
+            "cover": "https://image.aladin.co.kr/product/36172/89/cover200/8936425161_1.jpg",
+            "description": "『당신의 이름을 지어다가 며칠은 먹었다』(문학동네 2012)와 『우리가 함께 장마를 볼 수도 있겠습니다』(문학과지성사 2018)로 한국시 독자의 외연을 폭넓게 확장하며 독보적인 존재감을 보여준 박준의 세번째 시집 『마중도 배웅도 없이』가 출간되었다.",
+            "pub_date": "2025-04-11",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 17,
+        "fields": {
+            "category": 1,
+            "title": "탁영",
+            "author": "장다혜",
+            "cover": "https://image.aladin.co.kr/product/36254/49/cover200/k252038526_3.jpg",
+            "description": "조선 후기, 한양. 시체를 묻으며 살아온 천민 백섬은 누이 막단의 기일에 들른 훈룡사에서 목을 맨 도령을 목격한 뒤 뜻밖에도 조선의 어의 최승렬 댁 노비로 팔려간다. 외딴 별채 구곡재로 보내진 백섬은 종치고는 이상한 융숭한 대접을 받으며 약재 배달을 온 금박장 희제, 매를 찾으러 온 장헌과 은밀한 벗이 된다. 하지만 그 호의에는 끔찍한 이유가 숨겨져 있었음이 드러난다.",
+            "pub_date": "2025-05-23",
+            "is_bestseller": false,
+            "is_new": true,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 18,
+        "fields": {
+            "category": 1,
+            "title": "파쇄",
+            "author": "구병모",
+            "cover": "https://image.aladin.co.kr/product/31273/29/cover200/k592832565_1.jpg",
+            "description": "위즈덤하우스에서 새롭게 선보이는 단편소설 시리즈 ‘위픽(WEFIC)’이 세상을 향해 그 첫발을 내딛는다. 첫 번째 주인공은 구병모 작가다. 『파쇄』는 그녀의 대표작 『파과』의 외전으로, ‘조각’이라는 인물이 어떻게 킬러가 되었는지 그 시작을 그린 소설이다.",
+            "pub_date": "2023-03-08",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 19,
+        "fields": {
+            "category": 1,
+            "title": "당신의 세계는 아직도 바다와 빗소리와 작약을 취급하는지",
+            "author": "김경미",
+            "cover": "https://image.aladin.co.kr/product/31019/21/cover200/8937409283_1.jpg",
+            "description": "민음의 시 307권. 김경미 시인의 여섯 번째 시집. 일상과의 낯선 거리를 빚어내는 탁월한 거리 감각이 김경미 시가 지닌 블랙유머의 특징이라면, 이번 시집에서 그 유머는 날개를 달고 더 멀리 날아간다.",
+            "pub_date": "2023-01-27",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 20,
+        "fields": {
+            "category": 1,
+            "title": "구의 증명",
+            "author": "최진영",
+            "cover": "https://image.aladin.co.kr/product/31561/46/cover200/k782832854_1.jpg",
+            "description": "사랑하는 연인의 갑작스러운 죽음 이후 겪게 되는 상실과 애도의 과정을 통해 삶의 의미 혹은 죽음의 의미를 되묻는 소설이다. 이 작품에서 최진영은 퇴색하지 않는 사랑의 가치를 전면에 내세우고 아름다운 문장과 감성적이며 애절한 감수성을 통해 젊고 아름다운 남녀의 열정적인 사랑과 냉정한 죽음에 대해 세련된 감성과 탁월한 문체로 담아내고 있다.",
+            "pub_date": "2023-04-26",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 21,
+        "fields": {
+            "category": 1,
+            "title": "심장보다 단단한 토마토 한 알",
+            "author": "고선경",
+            "cover": "https://image.aladin.co.kr/product/35590/4/cover200/k282036896_1.jpg",
+            "description": "2025년 1월, 열림원은 새해를 맞아 새롭게 시인선 시-LIM을 선보인다. ‘시-LIM 시인선’의 첫 번째 시집은 고선경 시인의 『심장보다 단단한 토마토 한 알』이다. 날카로운 유머와 재미, 솔직한 고백 속에서 빛나는 진심, 용기와 사랑을 여전히 간직한 채로 한층 더 깊어진 마음을 전한다.",
+            "pub_date": "2025-01-10",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 22,
+        "fields": {
+            "category": 1,
+            "title": "일억 번째 여름",
+            "author": "청예",
+            "cover": "https://image.aladin.co.kr/product/36422/69/cover200/8936431552_1.jpg",
+            "description": "한국과학문학상, K-스토리 공모 등 각종 공모를 휩쓴 청예의 장편소설 『일억 번째 여름』(소설Y)이 출간되었다. 『오렌지와 빵칼』 『낭만 사랑니』 등 도발적인 시선과 독특한 문장으로 주목받은 청예는 이번 작품에서 처음으로 곡진한 사랑 이야기를 펼쳐 보인다.",
+            "pub_date": "2025-05-16",
+            "is_bestseller": false,
+            "is_new": true,
+            "is_J_recommended": true
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 23,
+        "fields": {
+            "category": 1,
+            "title": "천 개의 파랑",
+            "author": "천선란",
+            "cover": "https://image.aladin.co.kr/product/24895/69/cover200/k882632470_2.jpg",
+            "description": "한국과학문학상 장편 대상 수상작. 2019년 첫 장편소설 『무너진 다리』로 SF 팬들에게 눈도장을 찍었고, 2020년 7월, 소설집 『어떤 물질의 사랑』을 통해 우리 SF의 대세로 굳건히 자리 잡은 천선란의 작품이다.",
+            "pub_date": "2020-08-19",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": true
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 24,
+        "fields": {
+            "category": 1,
+            "title": "보조 영혼",
+            "author": "김복희",
+            "cover": "https://image.aladin.co.kr/product/36446/41/cover200/8932044015_1.jpg",
+            "description": "2015년 『한국일보』신춘문예를 통해 작품 활동을 시작해 천진하고 희귀한 시선으로 평단과 독자의 주목을 한 몸에 받으며 시, 에세이 등 다양한 장르에서 활동해온 김복희 시인의 네번째 시집이 문학과지성사에서 출간되었다.",
+            "pub_date": "2025-05-16",
+            "is_bestseller": false,
+            "is_new": true,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 25,
+        "fields": {
+            "category": 8,
+            "title": "결국 국민이 합니다 : 이재명의 인생과 정치철학",
+            "author": "이재명",
+            "cover": "https://image.aladin.co.kr/product/36209/99/cover200/899778062x_1.jpg",
+            "description": "2024년 12월 3일 ‘내란의 밤’부터 윤석열 대통령 탄핵소추안 가결, 2025년 4월 4일 헌재의 파면 선고까지 숨가빴던 순간들의 ‘막전막후’를 이재명의 시선으로 들여다본다.",
+            "pub_date": "2025-04-15",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 26,
+        "fields": {
+            "category": 8,
+            "title": "대통령 윤석열 탄핵 사건 선고 결정문",
+            "author": "헌법재판소",
+            "cover": "https://image.aladin.co.kr/product/36185/11/cover200/k592038492_2.jpg",
+            "description": "＼헌법재판소의 대통령 탄핵 결정에 맞춰 ‘대통령 윤석열 탄핵 사건 선고 결정문’ 전문을 기존의 『대한민국헌법』과 함께 묶어 『대통령 윤석열 탄핵 사건 선고 결정문』이라는 하나의 책으로 만들었다.",
+            "pub_date": "2025-04-04",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 27,
+        "fields": {
+            "category": 8,
+            "title": "주민의 헌법",
+            "author": "박주민",
+            "cover": "https://image.aladin.co.kr/product/35904/47/cover200/k902037288_2.jpg",
+            "description": "국회의원 박주민의 눈으로 헌법을 해석한 이 책은 주어진 권리를 지키기 위해 대한민국 국민이 알아야 할 최소한의 상식을 담고 있는 헌법을 쉽고 명쾌한 설명으로 풀어낸다. 현직 국회의원이 쓴 헌법 책인 만큼 법률가로서의 논리와 입법가로서 필드에서 활동하고 있는 경험이라는 두 가지 포인트가 모두 살아 있는 것이 이 책의 가장 큰 장점이다.",
+            "pub_date": "2025-03-10",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 28,
+        "fields": {
+            "category": 8,
+            "title": "대한민국  마지막 기회가 온다",
+            "author": "김태유",
+            "cover": "https://image.aladin.co.kr/product/36402/9/cover200/8952139585_1.jpg",
+            "description": "과학기술, 경제학, 역사학을 넘나들며 인류문명의 발전과 쇠퇴에 관한 연구와 집필에 몰두해 온 서울대학교 김태유 교수의 신작. 세계 패권 질서의 핵심 원리에서 시작해 현 트럼프 2기 행정부와 러우 전쟁 종전 이후 국제질서의 변화를 세밀하게 분석해 냈다.",
+            "pub_date": "2025-05-16",
+            "is_bestseller": false,
+            "is_new": true,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 29,
+        "fields": {
+            "category": 8,
+            "title": "돈의 흐름은 되풀이된다",
+            "author": "홍춘욱",
+            "cover": "https://image.aladin.co.kr/product/36403/41/cover200/k622039786_2.jpg",
+            "description": "국내 대표 이코노미스트 홍춘욱 박사가 자산 시장의 흐름을 통찰하는 신간이다. 이 책은 자산 가격의 등락을 결정짓는 거시 경제 지표부터 투자 심리, 버블과 붕괴의 메커니즘까지 폭넓게 다루며, 반복되는 시장의 사이클 속에서 투자자들이 투자 타이밍을 잡는 방법을 제시한다.",
+            "pub_date": "2025-05-21",
+            "is_bestseller": false,
+            "is_new": true,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 30,
+        "fields": {
+            "category": 8,
+            "title": "죽은 다음",
+            "author": "희정",
+            "cover": "https://image.aladin.co.kr/product/36300/18/cover200/k282038341_1.jpg",
+            "description": "‘일하다 다치고 병든 이들의 삶과 노동’을 이야기해온 기록노동자 희정이 이번엔 죽음과 애도를 둘러싼 노동의 세계에 노동자로, 기록자로 선다. 점차 산업화되어가는 장례 문화와 다변화된 가족 구성을 포괄하지 못하는 장례 제도를 경유해 이 시대의 죽음과 애도 문제를 탐구한다.",
+            "pub_date": "2025-05-06",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 31,
+        "fields": {
+            "category": 8,
+            "title": "이재명의 길",
+            "author": "박시백",
+            "cover": "https://image.aladin.co.kr/product/36159/64/cover200/k012038787_1.jpg",
+            "description": "소년공에서 대선후보까지, 이재명을 샅샅이 톺아본 책이다.",
+            "pub_date": "2025-04-10",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 32,
+        "fields": {
+            "category": 8,
+            "title": "헌법 필사",
+            "author": "대한민국",
+            "cover": "https://image.aladin.co.kr/product/35102/82/cover200/k982934603_1.jpg",
+            "description": "독자들이 헌법을 쉽고 가벼운 기분으로 읽고 써 보면 좋겠다는 생각에서 기획된 책이다. 헌법 전체를 조문 순서대로 제시했으므로, 필사를 통해 그 속에 담긴 속뜻까지 쉽게 파악할 수 있다.",
+            "pub_date": "2024-10-30",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 33,
+        "fields": {
+            "category": 8,
+            "title": "열린책들 편집 매뉴얼 2025",
+            "author": "열린책들 편집부",
+            "cover": "https://image.aladin.co.kr/product/36443/41/cover200/8932925143_1.jpg",
+            "description": "2008년 첫 출간 이후 편집이 필요한 모든 현장의 필수 매뉴얼로 자리 잡은 <열린책들 편집 매뉴얼>의 열일곱 번째 증보판 『열린책들 편집 매뉴얼 2025』가 출간되었다. 이 책은 도서 편집자들이 꼭 알아야 할 자료를 실은 매뉴얼로, 출판계뿐 아니라 다양한 편집 현장에서 꾸준히 수요가 있어 왔다.",
+            "pub_date": "2025-05-15",
+            "is_bestseller": false,
+            "is_new": true,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 34,
+        "fields": {
+            "category": 8,
+            "title": "트럼프 시대의 지정학과 비트코인",
+            "author": "오태민",
+            "cover": "https://image.aladin.co.kr/product/35862/62/cover200/k162037577_1.jpg",
+            "description": "브레턴우즈부터 아브라함 협정과 2023년 한미일 협정, 미국의 중국 길들이기까지 과거와 현대의 핵심적인 사건들을 살펴봄으로써 미국의 세계전략이 어떻게 변모하고 있는지 알아보고 이것이 경제와 정치에 어떤 영향을 미칠지 지정학적 관점으로 탐구한다.",
+            "pub_date": "2025-03-04",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 35,
+        "fields": {
+            "category": 8,
+            "title": "왜 좋은 일자리는 늘 부족한가",
+            "author": "이상헌",
+            "cover": "https://image.aladin.co.kr/product/36276/65/cover200/k432038836_1.jpg",
+            "description": "똑떨어지게 답이 나오는 경제학적 분석을 뛰어넘어, 노동과 고용이라는 좁은 개념 밖에 존재하는 ‘일하는 삶’의 가치를 다시 묻는다. 총 아홉 장으로 구성된 책은 각각의 장에서 ‘좋은 일자리’를 둘러싼 다층적 문제의식을 바탕으로 이 나라의 일하는 삶을 생생히 묘파하고 곳곳에서 현실적인 대안을 강구한다.",
+            "pub_date": "2025-05-01",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 36,
+        "fields": {
+            "category": 8,
+            "title": "2030, 영혼의 연대기",
+            "author": "배수찬",
+            "cover": "https://image.aladin.co.kr/product/36373/85/cover200/8982641645_1.jpg",
+            "description": "1999년부터 2025년까지 대한민국 청년들의 영혼을 할퀴고 간 열 가지 젠더정치 이슈들을 복기한다. 초고속 인터넷과 야동의 탄생, 군가산점 폐지와 여혐, 노무현과 일베의 고인모독, 메갈리아와 남혐, 문재인 정부와 페미니즘, 텔레그램 성착취 사건, 박원순 사망사건, 이준석 현상, 윤석열 당선, 딥페이크 성범죄 문제가 그것이다.",
+            "pub_date": "2025-05-08",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 37,
+        "fields": {
+            "category": 8,
+            "title": "한국이란 무엇인가",
+            "author": "김영민",
+            "cover": "https://image.aladin.co.kr/product/36160/6/cover200/k172038888_1.jpg",
+            "description": "거침없는 상상력과 정교한 논리, 리듬감 있는 문장으로 독자를 깊은 사유의 장으로 이끌어온 서울대 김영민 교수가 이 오래된 질문을 다시 붙잡고, 한국 사회를 새롭게 읽어낸다. 《한국이란 무엇인가》는 그 말하기의 시작이다. 김영민 교수는 이번 책에서 우리가 한국을 ‘이해해온 방식 자체’를 처음부터 되묻고, 새로운 서사의 가능성을 이야기한다.",
+            "pub_date": "2025-04-10",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 38,
+        "fields": {
+            "category": 8,
+            "title": "트럼프는 김정은에게 무엇을 원하는가",
+            "author": "김동기",
+            "cover": "https://image.aladin.co.kr/product/35833/28/cover200/k352037766_1.jpg",
+            "description": "베스트셀러 『지정학의 힘』 『달러의 힘』 등을 통해 정치·경제에 대한 거시적 안목과 통찰을 전해온 김동기 저자는 신작 『트럼프는 김정은에게 무엇을 원하는가』에서 트럼프 신정부 시대가 한국에 기회로 작용할 수 있다는 의견을 내놓는다.",
+            "pub_date": "2025-02-17",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 39,
+        "fields": {
+            "category": 8,
+            "title": "사람, 장소, 환대",
+            "author": "김현경",
+            "cover": "https://image.aladin.co.kr/product/5606/62/cover200/8932027269_3.jpg",
+            "description": "현대의 지성 시리즈. 이 책의 키워드는 사람, 장소, 그리고 환대이다. 이 세 개념은 맞물려서 서로를 지탱한다. 사람임은 일종의 자격이며, 타인의 인정을 필요로 한다. 우리는 환대에 의해 사회 안에 들어가며 사람이 된다. 사람이 된다는 것은 자리/장소를 갖는다는 것이다.",
+            "pub_date": "2015-03-31",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 40,
+        "fields": {
+            "category": 7,
+            "title": "게으른 자를 위한 수상한 화학책",
+            "author": "이광렬",
+            "cover": "https://image.aladin.co.kr/product/33664/64/cover200/8968334498_2.jpg",
+            "description": "주기율표를 외우는 것이 화학의 전부라고 오해하는 과알못(과학을 잘 알지 못하는)을 위해, 일상에서 화학의 즐거움을 발견하는 경험을 선물하기 위해 이광렬 교수가 나섰다. 누구나 해야 하지만 시간 도둑의 주범인, 게다가 화학과 밀접한 연관이 있는 일상의 집안일에 주목했다.",
+            "pub_date": "2024-03-25",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 41,
+        "fields": {
+            "category": 7,
+            "title": "벌거벗은 세계사 : 과학편",
+            "author": "tvN〈벌거벗은 세계사〉제작팀",
+            "cover": "https://image.aladin.co.kr/product/36276/27/cover200/k262038835_1.jpg",
+            "description": "tvN 교양 프로그램인 〈벌거벗은 세계사〉에서 다뤘던 내용 중 과학에 관한 사건들을 모아 만든 책이다. 우리가 살고 있는 지구, 인간의 생명, 산업혁명, 인간이 등장하기 전의 시대, 생물의 진화, 화학과 물리학, 고생물학, 지질학, 환경 오염 등 다양한 주제를 세계사와 과학 지식을 넘나들며 새로운 시각에서 이야기한다.",
+            "pub_date": "2025-04-24",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": true
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 42,
+        "fields": {
+            "category": 7,
+            "title": "부의 역설",
+            "author": "강범구",
+            "cover": "https://image.aladin.co.kr/product/34323/95/cover200/8974259192_2.jpg",
+            "description": "자기계발 업계의 근간을 뒤엎는 논제를 화두로 던진다. 그러나 그에 대한 대안은 단순하고 명쾌하다. 우리가 뇌를 바꿔 성공할 수 있는 유일한 방법은 ‘생각’뿐이다. 돈을 벌어 부자가 됐다는 상상, 내가 원하는 것을 얻었다는 상상만이 우리의 뇌를 변화시킬 수 있다.",
+            "pub_date": "2024-07-25",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 43,
+        "fields": {
+            "category": 7,
+            "title": "범준에 물리다",
+            "author": "김범준",
+            "cover": "https://image.aladin.co.kr/product/36275/38/cover200/k632038831_2.jpg",
+            "description": "구독자들의 열렬한 관심과 기다림에 인기 유튜브 『범준에 물리다』 컨텐츠를 드디어 책으로 엮었다. 유튜브를 통해 미처 하지 못한 물리학 이야기들도 담겨 있다. 통계물리학자인 김범준 교수가 물리학 지식을 많은 사람들과 공유하고 소통하기 위해 만든 유튜브 채널은 이미 구독자 수가 23만 명에 달하며 조회수도 2000만 뷰를 넘었다.",
+            "pub_date": "2025-05-15",
+            "is_bestseller": false,
+            "is_new": true,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 44,
+        "fields": {
+            "category": 7,
+            "title": "수학의 숲을 걷다",
+            "author": "송용진",
+            "cover": "https://image.aladin.co.kr/product/36115/91/cover200/8968334935_1.jpg",
+            "description": "위상수학 분야의 세계적 권위자이자 국제수학올림피아드 한국대표단을 30년간 이끌어 온 송용진 교수는, 많은 사람들이 갖고 있는 수학에 대한 갈증을 해소하기 위해 이 책 《수학의 숲을 걷다》를 썼다.",
+            "pub_date": "2025-03-25",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 45,
+        "fields": {
+            "category": 7,
+            "title": "이게 되네? 챗GPT 미친 활용법 71제",
+            "author": "오힘찬",
+            "cover": "https://image.aladin.co.kr/product/35473/90/cover200/k772035440_2.jpg",
+            "description": "챗GPT 분야 25주 연속 베스트셀러인 《이게 되네? 챗GPT 미친 활용법 51제》가 최신 챗GPT 업데이트를 반영하여 완전히 새로운 개정판으로 다시 찾아왔다. 인공지능 시대에 일잘러, 작가, 영상 편집자, 현인으로서 살아갈 여러분의 마법의 지팡이가 되어줄 것이다.",
+            "pub_date": "2025-01-10",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 46,
+        "fields": {
+            "category": 7,
+            "title": "문과 남자의 과학 공부",
+            "author": "유시민",
+            "cover": "https://image.aladin.co.kr/product/31877/37/cover200/k982833431_3.jpg",
+            "description": "역사ㆍ정치ㆍ경제ㆍ글쓰기ㆍ여행 등 인문학 분야의 글을 써온 작가 유시민이 과학을 소재로 쓴 첫 책이다. 유시민에게 “지적 자극과 정서적 감동을 준 과학이론, 인간과 사회와 역사에 대한 생각을 교정해준 정보를 골라 새롭게 해석”했다.",
+            "pub_date": "2023-06-23",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 47,
+        "fields": {
+            "category": 7,
+            "title": "찬란한 멸종",
+            "author": "이정모",
+            "cover": "https://image.aladin.co.kr/product/34433/86/cover200/k472932124_2.jpg",
+            "description": "JTBC 『차이나는 클라스』, tvN 『어쩌다 어른』 등의 방송과 유튜브 채널에서 ‘지구의 역사’와 ‘인류 대멸종’을 주제로 강의해 누적 조회 수 1100만 회 이상을 기록하며 화제를 모았던 이정모 저자가 『찬란한 멸종』을 통해 멸종으로 보는 46억 년 지구의 역사를 본격적으로 스토리텔링한다.\n",
+            "pub_date": "2024-08-07",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 48,
+        "fields": {
+            "category": 7,
+            "title": "식물의 매력",
+            "author": "이호영",
+            "cover": "https://image.aladin.co.kr/product/36410/4/cover200/k612039886_1.jpg",
+            "description": "‘호쌤이랑 식물 수다’ 시리즈 첫 번째 책이다. 식물이 무엇인지, 어디까지 식물로 봐야 하는지, 어떻게 탄생했는지, ‘종’이란 어떻게 생겨난 개념인지 정리해주는 것으로 이야기를 시작한다. 재미없을 것 같은 내용조차 흥미롭게 풀어가는 호쌤의 이야기 솜씨가 발군이다.",
+            "pub_date": "2025-05-23",
+            "is_bestseller": false,
+            "is_new": true,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 49,
+        "fields": {
+            "category": 7,
+            "title": "닥터프렌즈의 구사일생 세계사",
+            "author": "이낙준",
+            "cover": "https://image.aladin.co.kr/product/36331/76/cover200/k692038651_1.jpg",
+            "description": "140만 구독자 유튜브 채널 ‘닥터프렌즈’ 이낙준 작가의 〈의학의 역사〉가 누적 조회 수 6천만 돌파, 대중의 폭발적인 사랑을 받으며 《닥터프렌즈의 오마이갓 세계사》에 이어 《닥터프렌즈의 구사일생 세계사》로 출간됐다.",
+            "pub_date": "2025-05-10",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 50,
+        "fields": {
+            "category": 1,
+            "title": "우리가 빛의 속도로 갈 수 없다면",
+            "author": "김초엽",
+            "cover": "https://image.aladin.co.kr/product/19359/16/cover200/s722039767_1.jpg",
+            "description": "2017년 '관내분실'과 '우리가 빛의 속도로 갈 수 없다면'으로 제2회 한국과학문학상 중단편 대상과 가작을 수상하며 작품 활동을 시작한 김초엽 작품집. '순례자들은 왜 돌아오지 않는가', '스펙트럼', '공생가설', '우리가 빛의 속도로 갈 수 없다면', '감정의 물성', '관내분실', '나의 우주 영웅에 관하여'가 수록되었다.",
+            "pub_date": "2019-06-24",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": true
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 51,
+        "fields": {
+            "category": 1,
+            "title": "너의 유토피아",
+            "author": "정보라",
+            "cover": "https://image.aladin.co.kr/product/35549/91/cover200/k752036371_2.jpg",
+            "description": "부커상과 전미도서상 최종 후보로 선정되었던 정보라의 두 번째 소설집 《너의 유토피아》가 2025년 1월 래빗홀에서 다시 출간되었다. 2021년 출간된 《그녀를 만나다》의 개정판인 이 책은 〈너의 유토피아〉를 표제작으로 삼고, 새로운 순서와 장정, 더 정교히 다듬어진 문장으로 정비되어 독자를 만날 채비를 마쳤다.",
+            "pub_date": "2025-01-15",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 52,
+        "fields": {
+            "category": 1,
+            "title": "지구 끝의 온실",
+            "author": "김초엽",
+            "cover": "https://image.aladin.co.kr/product/27692/63/cover200/s222930473_1.jpg",
+            "description": "김초엽 첫 장편소설. 『우리가 빛의 속도로 갈 수 없다면』을 통해 이미 폭넓은 독자층을 형성하며 열렬한 사랑을 받고 있는 김초엽 작가는 더스트로 멸망한 이후의 세계를 첫 장편소설의 무대로 삼았다.",
+            "pub_date": "2021-08-18",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 53,
+        "fields": {
+            "category": 1,
+            "title": "저 이승의 선지자",
+            "author": "김보영",
+            "cover": "https://image.aladin.co.kr/product/36337/58/cover200/k652039766_1.jpg",
+            "description": "“놀랍고, 겸손하며, 지극히 아름다운 이야기” 해외에서 더 극찬을 받은, 한국 SF의 거장 김보영의 숨은 걸작. 우민정 작가의 그림 〈Burning Dance〉를 만나 선보이는 리커버 에디션.",
+            "pub_date": "2025-05-20",
+            "is_bestseller": false,
+            "is_new": true,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 54,
+        "fields": {
+            "category": 1,
+            "title": "돌이킬 수 있는",
+            "author": "문목하",
+            "cover": "https://image.aladin.co.kr/product/17531/63/cover200/k062534304_1.jpg",
+            "description": "문목하의 데뷔작. 부패경찰과 정체불명의 불법 조직 사이에서 벌어지는 첩보와 배신, 초능력물과 누아르를 캐릭터와 대사로 녹여낸 작품이다. 김창규 작가는 \"초능력 전투물의 기시감을 너끈히 지우고 한 걸음 더 나아간, 장르 고전 자리를 예약한 데뷔작.\"이라고 평했다.",
+            "pub_date": "2018-12-05",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 55,
+        "fields": {
+            "category": 1,
+            "title": "저주토끼",
+            "author": "정보라",
+            "cover": "https://image.aladin.co.kr/product/31484/34/cover200/k712832622_2.jpg",
+            "description": "정보라의 호러/SF/판타지 소설집 『저주토끼』 전면 개정판. 만두 파동 사건에서 영감을 받아 쓰인 표제작 '저주토끼'는 날카로운 분노를 생생하게 살리고 어디에도 기댈 곳 없는 사람들의 맥락이 선명히 드러나기를 바라는 작가의 뜻을 충실히 반영하여 결말 부분 일부를 최초 창작 버전으로 복원하였다.",
+            "pub_date": "2023-04-13",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 56,
+        "fields": {
+            "category": 1,
+            "title": "다섯 번째 감각",
+            "author": "김보영",
+            "cover": "https://image.aladin.co.kr/product/28736/71/cover200/k442836780_3.jpg",
+            "description": "12년 만에 복간되는 김보영 소설집. 데뷔작이자 제1회 과학기술 창작문예 대상을 받은 『촉각의 경험』에서부터 한국 SF 역사에서 가장 아름다운 작품 중 하나로 기록될 』지구의 하늘에는 별이 빛나고 있다』까지, 오래도록 한국의 SF에서 빛나고 있었던 김보영의 초기 걸작들을 다시 만나본다.",
+            "pub_date": "2022-02-10",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 57,
+        "fields": {
+            "category": 1,
+            "title": "테스터 2",
+            "author": "이희영",
+            "cover": "https://image.aladin.co.kr/product/36141/44/cover200/k392038679_1.jpg",
+            "description": "“정교하고, 아름답고, 꿈결 같고, 왠지 슬프다”(장강명 소설가), “『페인트』와 『나나』를 잇는 또 하나의 명작이 탄생하는 순간”(정여울 문학평론가) 등의 뜨거운 찬사를 받으며 출간된 『테스터 1』. 그후 수많은 독자의 사랑을 받아 청소년 SF 베스트셀러로 자리매김한 지 3년, 마침내 그 속편인 『테스터 2』가 출간되었다.",
+            "pub_date": "2025-04-09",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 58,
+        "fields": {
+            "category": 1,
+            "title": "7인의 집행관",
+            "author": "김보영",
+            "cover": "https://image.aladin.co.kr/product/32150/96/cover200/k692834216_1.jpg",
+            "description": "당신이 기억하지 못하는 이들이 반복해서 당신에게 사형을 선고한다면? 더해서 당신이 스스로도 기억하지 못하는 죄를 지었다면? 첨예한 이야기로 출간 즉시 화제를 모았던 『7인의 집행관』(2013)이 전면적인 개정판으로 우리 곁을 찾았다.",
+            "pub_date": "2023-07-31",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 59,
+        "fields": {
+            "category": 1,
+            "title": "당신을 기다리고 있어",
+            "author": "김보영",
+            "cover": "https://image.aladin.co.kr/product/23972/99/cover200/8963717569_2.jpg",
+            "description": "김보영 작가의 SF ‘스텔라 오디세이 트릴로지’ 《당신을 기다리고 있어》, 《당신에게 가고 있어》, 《미래로 가는 사람들》이 출간되었다. 세 작품은 모두 우주여행을 주제로 담고 있으며 무한한 우주를 항해하는 동안 변화하는 시간과 공간이 사람들에게 어떤 의미를 가지게 되는지를 가슴 따뜻한 울림으로 표현하고 있다.",
+            "pub_date": "2020-05-26",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 60,
+        "fields": {
+            "category": 1,
+            "title": "테스터",
+            "author": "이희영",
+            "cover": "https://image.aladin.co.kr/product/30558/37/cover200/k952830407_2.jpg",
+            "description": "30만 명의 독자들이 사랑한 베스트셀러 『페인트』를 쓴 이희영 작가의 장편소설이다. ‘누가 이토록 연약한 소년을 숲속에 홀로 방치해 두었을까’ 하는 미스테리한 질문 하나로 이야기를 끝까지 밀어붙이는 이 작품은 장대하고도 아름다운 디스토피아 SF이다.",
+            "pub_date": "2022-11-28",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 61,
+        "fields": {
+            "category": 1,
+            "title": "방금 떠나온 세계",
+            "author": "김초엽",
+            "cover": "https://image.aladin.co.kr/product/32697/5/cover200/k522936662_3.jpg",
+            "description": "첫 소설집《우리가 빛의 속도로 갈 수 없다면》에 이어 2년 만에 출간되었던 두 번째 소설집 《방금 떠나온 세계》가 새로운 표지로 돌아왔다. “서로 겹칠 수 없는 세계들의 교차점”을 실감 나게 그린 작품 일곱 편은 2년이 지난 지금도 독자들의 마음을 속속들이 매만진다.",
+            "pub_date": "2023-10-20",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 62,
+        "fields": {
+            "category": 1,
+            "title": "사바삼사라 서 세트",
+            "author": "J. 김보영",
+            "cover": "https://image.aladin.co.kr/product/34468/96/cover200/k572932530_2.jpg",
+            "description": "전미도서상 후보 선정, 〈듄〉 각본가의 영화 시나리오 착수 등 세계가 주목하는 작가로 자리매김한 김보영이 새로운 필명으로 첫 장편소설을 선보인다. 한국 SF의 전범이라는 ‘굴레’를 벗고 장르의 경계를 넘어섰다. 작가 스스로 “계획한 전개를 흔들림 없이 끌고 가서, 가장 만족스러운 결말로 끝냈다”고 밝힌 대작이다.",
+            "pub_date": "2024-09-24",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 63,
+        "fields": {
+            "category": 1,
+            "title": "이끼숲",
+            "author": "천선란",
+            "cover": "https://image.aladin.co.kr/product/31568/81/cover200/k672832652_3.jpg",
+            "description": "“구하는 이야기를 써야겠다고 생각했다. 내 이야기는 끝내 구하는 이야기가 된다고 생각하면서도, 조금 더 뚜렷하게 구해야겠다고 생각했다”라는 작가의 말처럼, 『이끼숲』은 누군가의 마음을, 살아 숨쉬는 생명을, 모든 것들이 연결된 이 세계를 구하려는 간절한 바람으로 쓰여졌다.",
+            "pub_date": "2023-05-04",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 64,
+        "fields": {
+            "category": 1,
+            "title": "진공 붕괴",
+            "author": "해도연",
+            "cover": "https://image.aladin.co.kr/product/36306/4/cover200/k672038442_1.jpg",
+            "description": "대학에서 물리학을 전공하고, 대학원에서 천문학으로 박사학위를 받으며 현재 가장 믿음직한 SF를 써내는 소설가로 꼽히는 해도연 작가가 세 번째 소설집 《진공 붕괴》를 출간한다. 작가가 부지런히 다져온 문학적 감수성과 지적 상상력의 총체라 할 수 있는 여섯 편의 매력적인 단편들을 싣고 있다.",
+            "pub_date": "2025-04-30",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 65,
+        "fields": {
+            "category": 1,
+            "title": "오렌지와 빵칼",
+            "author": "청예",
+            "cover": "https://image.aladin.co.kr/product/34259/77/cover200/k852932962_1.jpg",
+            "description": "사회생활 속에서 자기 검열은 일상적으로 일어난다. 가끔은 그것이 자신도 모르게 강화되고, 남을 바라보는 시선 또한 각박해진다. 자신만의 ‘정의’를 내세우며 그것이 ‘선’이라 고집하는 이들에게 작가는 말한다. “너무 단편적으로만 생각하는 거 아닐까?” 이 생각으로부터 이야기가 시작됐다.",
+            "pub_date": "2024-07-17",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 66,
+        "fields": {
+            "category": 2,
+            "title": "청춘의 독서",
+            "author": "유시민",
+            "cover": "https://image.aladin.co.kr/product/36286/32/cover200/s372039570_1.jpg",
+            "description": "혼탁한 정국마다 명료한 통찰을 전하며 ‘신경안정제’ 역할을 해준 우리 시대의 지식인 유시민. 그의 대표작 중 하나로 2009년 처음 출간되어 오랜 시간 사랑받아온 『청춘의 독서』가 고급 양장 제본의 특별증보판으로 독자들과 새롭게 만난다.",
+            "pub_date": "2025-04-30",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 67,
+        "fields": {
+            "category": 2,
+            "title": "어린이는 멀리 간다",
+            "author": "김지은",
+            "cover": "https://image.aladin.co.kr/product/36256/59/cover200/8936448943_1.jpg",
+            "description": "오랜 시간 빛나는 지성과 따스한 진심으로 어린이와 문학을 이야기해 온 김지은 평론가가 첫 번째 에세이 『어린이는 멀리 간다』를 펴낸다. 이 책은 김지은 평론가가 2020년부터 2023년까지 4년간 경향신문에 연재한 칼럼을 비롯해 다양한 지면을 통해 발표한 산문을 엄선해 묶었다.",
+            "pub_date": "2025-05-23",
+            "is_bestseller": false,
+            "is_new": true,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 68,
+        "fields": {
+            "category": 2,
+            "title": "단 한 번의 삶",
+            "author": "김영하",
+            "cover": "https://image.aladin.co.kr/product/36114/12/cover200/s602038067_1.jpg",
+            "description": "김영하가 산문 『단 한 번의 삶』을 출간했다. 60만 명이 넘는 독자의 사랑을 받은 『여행의 이유』 이후 6년 만에 선보이는 산문집으로, 유료 이메일 구독 서비스 '영하의 날씨'에 2024년 연재되었던 글을 대폭 수정하고 다듬어 묶었다. '영하의 날씨'는 초기 구독자의 초대로만 가입이 가능한 서비스로 화제를 모으며 연재 당시 뜨거운 호응을 얻었다.",
+            "pub_date": "2025-04-06",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 69,
+        "fields": {
+            "category": 2,
+            "title": "빛과 실",
+            "author": "한강",
+            "cover": "https://image.aladin.co.kr/product/36292/22/cover200/8932043566_1.jpg",
+            "description": "“역사적 트라우마를 정면으로 마주하고 인간 삶의 연약함을 드러내는 강렬하고 시적인 산문”이라는 선정 이유와 함께 2024년 노벨문학상을 수상한 작가 한강의 신작 『빛과 실』(2025)이 문학과지성사 산문 시리즈 『문지 에크리』의 아홉번째 책으로 출간되었다.",
+            "pub_date": "2025-04-18",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 70,
+        "fields": {
+            "category": 2,
+            "title": "어른의 행복은 조용하다",
+            "author": "태수",
+            "cover": "https://image.aladin.co.kr/product/36236/69/cover200/k432038719_1.jpg",
+            "description": "베스트셀러 《어른의 행복은 조용하다》가 봄을 맞이하여 봄향기 물씬 풍기는 봄빛 에디션으로 리커버했다. 요란한 세상에서도 흔들리지 않고 내 삶을 살아가는 튼튼하고 단단한 태도를 담아낸 이 책은, 시끌벅적 기쁜 일을 찾아다니기보다도, 울 일이 없고 별다른 나쁜 일이 없는 하루를 만들어야 한다고 강조한다.",
+            "pub_date": "2024-11-04",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 71,
+        "fields": {
+            "category": 2,
+            "title": "내 꿈에 가끔만 놀러와",
+            "author": "고선경",
+            "cover": "https://image.aladin.co.kr/product/36374/35/cover200/k512039477_1.jpg",
+            "description": "첫 시집 『샤워젤과 소다수』 출간 이후 뜨겁게 주목받으며 청년 세대를 대변하는 작가로 자리매김한 고선경의 첫 산문집 『내 꿈에 가끔만 놀러와』가 출간되었다. 시인이 수년간 블로그에 연재해온 일기와 때때로 기록한 메모에 새로 쓴 원고들을 더해 엮은 이 책에는 이십대 청년으로서 그가 줄곧 그려온 알록달록한 마음의 무늬들이 담겼다.",
+            "pub_date": "2025-05-14",
+            "is_bestseller": false,
+            "is_new": true,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 72,
+        "fields": {
+            "category": 2,
+            "title": "살아갈 날들을 위한 괴테의 시",
+            "author": "김종원",
+            "cover": "https://image.aladin.co.kr/product/35547/2/cover200/s282037246_1.jpg",
+            "description": "괴테가 남긴 방대한 시들 가운데서 옥석을 가려내듯 가장 아름답고 마음을 울리는 작품들을 다정한 시선과 섬세한 통찰로 문장을 고르고 엮고 또 보태어 그 어떤 위로보다 찬란한 공감과 울림의 순간들을 페이지 곳곳에 담아냈다.",
+            "pub_date": "2025-01-17",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 73,
+        "fields": {
+            "category": 2,
+            "title": "우리가 모르는 낙원",
+            "author": "박서영(무루)",
+            "cover": "https://image.aladin.co.kr/product/36442/72/cover200/k042039395_1.jpg",
+            "description": "그림책 안내자 무루 작가의 에세이. 전작 《이상하고 자유로운 할머니가 되고 싶어》에서 그림책을 통해 세계의 가장자리를 살아가는 태도에 대해 이야기했던 무루 작가가 더욱 깊어지고 넓어져 돌아왔다. 이상하고 낯선 조각을 품은 이야기들을 가득 데리고서.",
+            "pub_date": "2025-05-22",
+            "is_bestseller": false,
+            "is_new": true,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 74,
+        "fields": {
+            "category": 2,
+            "title": "오역하는 말들",
+            "author": "황석희",
+            "cover": "https://image.aladin.co.kr/product/36422/36/cover200/k122039199_1.jpg",
+            "description": "대중에게 친근하게 와 닿는 재기발랄한 번역으로 잘 알려진 황석희가 이번에는 영화가 아닌 현실 세계를 번역한다. 오늘날 우리는 서로의 말을 문제없이 이해하며 소통하고 있을까. 황석희 번역가의 신간 《오역하는 말들》은 번역가의 시선에서 조금 더 예민하게 바라본 일과 일상 속 오역들에 대한 이야기다.",
+            "pub_date": "2025-05-30",
+            "is_bestseller": false,
+            "is_new": true,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 75,
+        "fields": {
+            "category": 2,
+            "title": "이 지랄맞음이 쌓여 축제가 되겠지",
+            "author": "조승리",
+            "cover": "https://image.aladin.co.kr/product/33696/25/cover200/k962939047_2.jpg",
+            "description": "2023년 샘터 문예공모전 생활수필 부문 대상을 받은 시각장애인 에세이스트 조승리의 첫번째 단행본이 출간되었다. 저자는 앞이 보이지 않는 캄캄한 현실 속에서도 자신만의 불꽃을 여실히 지켜냈음을 보여준다.",
+            "pub_date": "2024-03-29",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 76,
+        "fields": {
+            "category": 2,
+            "title": "나태주의 풀꽃 인생수업",
+            "author": "나태주",
+            "cover": "https://image.aladin.co.kr/product/36260/6/cover200/k512038626_1.jpg",
+            "description": "‘자세히 보아야 예쁘다/오래 보아야 사랑스럽다/너도 그렇다.’라는 단 세 줄의 시로 많은 이들의 마음에 깊은 울림을 주었던 풀꽃 시인 《나태주의 풀꽃 인생수업》이 출간되었다. 이 책은 코로나가 한창이던 2021년, 지속되는 힘든 상황 속에서 사람들의 고단함을 덜어주자는 취지에서 기획된 동명의 강의 『EBS 클래스ⓔ 나태주의 풀꽃 인생수업』에서 비롯되었다.",
+            "pub_date": "2025-04-28",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 77,
+        "fields": {
+            "category": 2,
+            "title": "행복할 거야 이래도 되나 싶을 정도로",
+            "author": "일홍",
+            "cover": "https://image.aladin.co.kr/product/34385/53/cover200/k082932407_2.jpg",
+            "description": "하루를 열심히 살아 내고 또 나아가고자 도전하는 당신에게 틀림없는 행복이 찾아올 거라 확신을 주는 『행복할 거야 이래도 되나 싶을 정도로』. 매일을 버텨 내고 있는 당신이 가슴 깊이 새겨 두면 좋을 글이 가득하다.",
+            "pub_date": "2024-07-29",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 78,
+        "fields": {
+            "category": 2,
+            "title": "우리의 낙원에서 만나자",
+            "author": "하태완",
+            "cover": "https://image.aladin.co.kr/product/36387/43/cover200/k372039674_1.jpg",
+            "description": "출간 도서 누적 판매 120만 부, 에세이 연간 베스트셀러에 오르며 독보적인 자리를 지켜온 작가 하태완이 2년 만의 신작으로 우리 곁에 찾아온다. 『우리의 낙원에서 만나자』는 작가가 그동안 세심히 다듬어 온 사랑의 언어를 바탕으로, 삶 전반을 지나는 우리 모두의 내면과 감정을 어루만진다.",
+            "pub_date": "2025-05-21",
+            "is_bestseller": false,
+            "is_new": true,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 79,
+        "fields": {
+            "category": 2,
+            "title": "동공이 약사의 알찬 약국",
+            "author": "동공이 약사",
+            "cover": "https://image.aladin.co.kr/product/36449/33/cover200/k182039494_1.jpg",
+            "description": "약국에서 짧게 들은 복약지침만으로는 약을 제대로 이해하기 어렵다. 궁금한 건 많은데, 물어볼 곳이 마땅치 않다. 약은 익숙하지만, 제대로 아는 사람은 드물다. 《동공이 약사의 알찬 약국》은 바로 그런 물음에 답하기 위해 만들어졌다. 서울대학교 약학대학을 졸업하고 약사로 일하고 있는 ‘동공이 약사’가 일상에서 자주 접하는 의약품에 대해 정확하고 알기 쉽게 설명한다.",
+            "pub_date": "2025-05-30",
+            "is_bestseller": false,
+            "is_new": true,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 80,
+        "fields": {
+            "category": 2,
+            "title": "진짜의 마인드",
+            "author": "김찬희(김진짜)",
+            "cover": "https://image.aladin.co.kr/product/36390/11/cover200/k232039789_1.jpg",
+            "description": "구독자 수 90만 유튜버 김진짜의 좌절기이자 원하는 삶을 이루어 내기까지의 생각들을 담은 분투기이다. 실패투성이 김진짜가 도전을 지속하게 해준 생각과 깨달음들을 담았다. 애써 외면 중인 꿈이 있다면 진짜의 생각들을 들어보자.",
+            "pub_date": "2025-06-18",
+            "is_bestseller": false,
+            "is_new": true,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 81,
+        "fields": {
+            "category": 2,
+            "title": "어른 김장하 각본",
+            "author": "김현지",
+            "cover": "https://image.aladin.co.kr/product/36237/93/cover200/k942038713_2.jpg",
+            "description": "다큐멘터리 《어른 김장하》는 경남 진주의 한 약방에서 60년 넘게 이름 없이 살아온 김장하 선생의 삶을 조명한다. 장학, 기부, 인권, 언론, 문화까지 묵묵히 실천해 온 진정한 ‘어른’의 이야기는 방송 이후 점차 입소문을 타며 다시 조명되기 시작했다.",
+            "pub_date": "2025-04-30",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 82,
+        "fields": {
+            "category": 2,
+            "title": "이어령의 말",
+            "author": "이어령",
+            "cover": "https://image.aladin.co.kr/product/35831/84/cover200/8933803653_1.jpg",
+            "description": "반드시 후대에 남기고 싶었던 최후의 기획이자, 수백 권의 저작에서 뽑은 에센스 중의 에센스. ‘자기 머리’로 생각하고 공부해온 사람만이 갖출 수 있는 깊고 넓은 사유가 마음, 인간, 문명, 사물, 언어, 예술, 종교, 우리, 창조라는 주제 아래 꾹꾹 눌러 담겨 있다.",
+            "pub_date": "2025-02-26",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 83,
+        "fields": {
+            "category": 2,
+            "title": "너에게 들려주는 단단한 말",
+            "author": "김종원",
+            "cover": "https://image.aladin.co.kr/product/34233/47/cover200/k212931234_2.jpg",
+            "description": "청소년을 위한 인생철학 에세이다. ‘나’라는 존재와 친구와의 관계, 공부와 성적, 꿈과 진로 등에 관한 고민이 커지는 청소년기는 인생이란 여정에서 어둡고 막막한 터널을 처음으로 마주하는 시기다. 어떤 생각을 키우고, 어떤 마음을 갖느냐에 따라 앞으로 펼쳐질 삶의 모양이 달라질 수도 있기에 저자는 단어 하나, 문장 하나에도 온 마음을 담았다.",
+            "pub_date": "2024-07-10",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 84,
+        "fields": {
+            "category": 2,
+            "title": "너무 오래 오타쿠로 살아서",
+            "author": "쑨디",
+            "cover": "https://image.aladin.co.kr/product/36458/45/cover200/k562039714_1.jpg",
+            "description": "",
+            "pub_date": "2025-05-28",
+            "is_bestseller": false,
+            "is_new": true,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 85,
+        "fields": {
+            "category": 2,
+            "title": "길 위의 뇌",
+            "author": "정세희",
+            "cover": "https://image.aladin.co.kr/product/34943/41/cover200/k762934568_1.jpg",
+            "description": "저자는 자신이 의사로서 만난 수많은 환자들의 케이스와 학자로서 알게 된 여러 연구 결과를 언급하며 건강할 때 운동 습관을 들이는 것이 얼마나 그리고 왜 중요한지 보여준다.",
+            "pub_date": "2024-10-18",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 86,
+        "fields": {
+            "category": 2,
+            "title": "꾸준한 행복",
+            "author": "김신회",
+            "cover": "https://image.aladin.co.kr/product/36415/49/cover200/k812039999_1.jpg",
+            "description": "40만 독자에게 사랑받으며, 9년째 스테디셀러로 자리매김한 《보노보노처럼 살다니 다행이야》, '본격 여름 영업 책'이라 불리며 여름마다 재쇄를 찍는 《아무튼, 여름》의 저자인 그가 2023년 《나의 누수 일지》 이후 새로운 작품을 선보인다. 18년 동안 글을 써온 전업 작가이자, 반려견 '풋콩이'의 보호자, 비혼 여성으로서 일궈온 하루하루가 담겨있다.",
+            "pub_date": "2025-05-15",
+            "is_bestseller": false,
+            "is_new": true,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 87,
+        "fields": {
+            "category": 2,
+            "title": "줍는 순간",
+            "author": "안희연",
+            "cover": "https://image.aladin.co.kr/product/36300/23/cover200/k552038341_1.jpg",
+            "description": "우리는 나날이 슬픔이 차오르는 천국에서 살아 있다는 사실과 싸우며 살아간다는 사실을 간절한 문장으로 써내려온 시인 안희연. 그의 2005년부터 2025년까지의 여행을 담은 산문집 『줍는 순간』이 출간되었다.",
+            "pub_date": "2025-04-30",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 88,
+        "fields": {
+            "category": 2,
+            "title": "제철 행복",
+            "author": "김신지",
+            "cover": "https://image.aladin.co.kr/product/33842/43/cover200/k982930091_1.jpg",
+            "description": "세상에 행복이란 게 존재한다면 잠시 머무는 이 계절의 모습을 하고 있을 것이다. 지금 곁에 와 손짓하고 있지만 무심코 지나쳐버리기 쉽기에 알맞은 시절에 챙겨야 하는 작은 기쁨들, 이 책은 바로 그 '제철 행복'에 대한 이야기다.",
+            "pub_date": "2024-04-25",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 89,
+        "fields": {
+            "category": 2,
+            "title": "더 나은 어휘를 쓰고 싶은 당신을 위한 필사책",
+            "author": "이주윤",
+            "cover": "https://image.aladin.co.kr/product/35255/63/cover200/k702934144_1.jpg",
+            "description": "요즘 독자들이 가장 사랑하는 작가 김애란, 양귀자, 클레어 키건부터 시대를 초월하여 사랑받는 박완서, 박경리, 알랭 드 보통, 헤르만 헤세까지, 글쓰기 대가들이 남긴 작품 100편을 엄선해 하루 한 장씩 필사할 수 있도록 구성했다.",
+            "pub_date": "2024-11-20",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 90,
+        "fields": {
+            "category": 2,
+            "title": "결국, 마음에 닿는 건 예쁜 말이다",
+            "author": "윤설",
+            "cover": "https://image.aladin.co.kr/product/36374/0/cover200/k262039476_1.jpg",
+            "description": "삶을 지탱하는 건 ‘관계’다. 때로는 누군가의 말 한마디가 한 사람의 하루가 되고, 전부가 된다. 각박해지는 세상 속에서 예쁜 말이 더더욱 필요한 이유다. 이 책은 우리 누구도 혼자가 아님을, 말이라는 따뜻한 온기로 서로를 보듬을 수 있음을 상기시켜 준다. 지친 마음에 살며시 내려앉아 다시 다정해질 용기를 건넨다.",
+            "pub_date": "2025-05-15",
+            "is_bestseller": false,
+            "is_new": true,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 91,
+        "fields": {
+            "category": 2,
+            "title": "삶이라는 완벽한 농담",
+            "author": "이경규",
+            "cover": "https://image.aladin.co.kr/product/35889/97/cover200/k242037888_2.jpg",
+            "description": "방송인 이경규가 첫 에세이를 펴냈다. 1981년 MBC 공채 1기 개그맨으로 데뷔한 이래로 나이가 들어도 끊임없이 탐구하고 발전해온 저자가 인생에 대한 애정과 책임감으로 무장한 채 온몸으로 뛰어들어 배우고 감각했던 삶과 일, 꿈을 대하는 눈부신 이야기를 한 권의 책에 오롯이 담았다.",
+            "pub_date": "2025-03-12",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 92,
+        "fields": {
+            "category": 2,
+            "title": "내가 한 말을 내가 오해하지 않기로 함",
+            "author": "문상훈",
+            "cover": "https://image.aladin.co.kr/product/33038/40/cover200/k562937688_1.jpg",
+            "description": "133만 명의 구독자를 보유한 유튜브 채널 『빠더너스』의 크리에이터 문상훈이 첫 산문집을 출간했다. 문쌤, 문이병, 문상 등 다양한 부캐로 그를 기억하는 사람들에게는 이 소식이 새삼스러울지도 모른다. 하지만 그의 오랜 팬이라면, 혹은 매체를 통해 그의 편지글 한 문장이라도 본 사람이라면 누구보다 기다려왔을 소식임이 분명하다.",
+            "pub_date": "2024-01-05",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 93,
+        "fields": {
+            "category": 2,
+            "title": "더 좋은 문장을 쓰고 싶은 당신을 위한 필사책",
+            "author": "이주윤",
+            "cover": "https://image.aladin.co.kr/product/34390/31/cover200/k112932504_1.jpg",
+            "description": "《요즘 어른을 위한 최소한의 문해력》, 《요즘 어른을 위한 최소한의 맞춤법》 등 10만 독자가 선택한 작가 이주윤이 그만의 필사 글쓰기 노하우를 담은 《더 좋은 문장을 쓰고 싶은 당신을 위한 필사책》을 출간했다.",
+            "pub_date": "2024-08-07",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 94,
+        "fields": {
+            "category": 5,
+            "title": "누가 내 머리에 똥 쌌어?",
+            "author": "베르너 홀츠바르트 (글), 볼프 에를브루흐 (그림)",
+            "cover": "https://image.aladin.co.kr/product/3/34/cover200/8971968419_2.jpg",
+            "description": "이 그림책은 유아들에게 관찰하고 탐구하는 태도와 힘을 길러준다. 두더지의 추적을 따라가다 보면 동물들의 이름과 모양새가 짝지어 나오고, 똥의 모양과 느낌에 대한 다양한 표현이 나와 사물의 느낌과 상태, 말 표현들을 익히게 되는 것이다.",
+            "pub_date": "2002-01-05",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 95,
+        "fields": {
+            "category": 1,
+            "title": "나미야 잡화점의 기적",
+            "author": "히가시노 게이고",
+            "cover": "https://image.aladin.co.kr/product/30768/99/cover200/k252830652_2.jpg",
+            "description": "히가시노 게이고의 가장 경이로운 대표작 『나미야 잡화점의 기적』이 국내 출간 10주년을 맞아 무선 보급판으로 발간된다. 초판 표지의 감동을 그대로 담아낸 무선판은 다소 무게감 있었던 양장판과 다르게 누구나 가볍게 들고 다니며 읽을 수 있도록 했다.",
+            "pub_date": "2022-12-19",
+            "is_bestseller": false,
+            "is_new": false,
+            "is_J_recommended": false
+        }
+    }
+]
