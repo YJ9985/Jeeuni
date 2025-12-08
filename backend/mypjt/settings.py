@@ -92,22 +92,33 @@ TEMPLATES = [
 WSGI_APPLICATION = 'mypjt.wsgi.application'
 
 # Database (기본: SQLite → 운영에서는 .env에서 override 권장)
-DATABASES = {
-    'default': {
-        'ENGINE': os.getenv("DB_ENGINE", "django.db.backends.sqlite3"),
-        'NAME': os.getenv("DB_NAME", BASE_DIR / 'db.sqlite3'),
-        'USER': os.getenv("DB_USER", ""),
-        'PASSWORD': os.getenv("DB_PASSWORD", ""),
-        'HOST': os.getenv("DB_HOST", ""),
-        'PORT': os.getenv("DB_PORT", ""),
-        # MySQL 시 권장 옵션
-        'OPTIONS': (
-            {'charset': 'utf8mb4', 'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"}
-            if os.getenv("DB_ENGINE") == "django.db.backends.mysql" else {}
-        ),
-        'CONN_MAX_AGE': 60,  # 연결 재사용(초). 트래픽 맞춰 조정
+db_engine = os.getenv("DB_ENGINE", "sqlite")  # 기본은 sqlite
+
+if db_engine == "postgres":
+    ENGINE = "django.db.backends.postgresql"
+elif db_engine == "mysql":
+    ENGINE = "django.db.backends.mysql"
+else:
+    ENGINE = "django.db.backends.sqlite3"
+
+if ENGINE == "django.db.backends.sqlite3":
+    DATABASES = {
+        "default": {
+            "ENGINE": ENGINE,
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
     }
-}
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": ENGINE,
+            "NAME": os.getenv("DB_NAME"),
+            "USER": os.getenv("DB_USER"),
+            "PASSWORD": os.getenv("DB_PASSWORD"),
+            "HOST": os.getenv("DB_HOST"),
+            "PORT": os.getenv("DB_PORT"),
+        }
+    }
 
 
 # Password validation
