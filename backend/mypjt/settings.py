@@ -3,9 +3,20 @@ import os
 from dotenv import load_dotenv
 from datetime import timedelta
 
-# BASE_DIR & .env 로드
 BASE_DIR = Path(__file__).resolve().parent.parent
-load_dotenv(BASE_DIR / ".env")
+
+# DJANGO_ENV: local / prod (기본값은 local)
+DJANGO_ENV = os.getenv("DJANGO_ENV", "local")
+
+# env 파일 경로 결정
+if DJANGO_ENV == "prod":
+    env_path = BASE_DIR / ".env.prod"
+else:
+    # default: local 개발환경
+    env_path = BASE_DIR / ".env.local"
+
+# 이미 OS에 들어있는 값은 건드리지 않도록 override=False
+load_dotenv(env_path, override=False)
 
 # 보안/환경
 DEBUG = os.getenv("DEBUG", "True") == "True"

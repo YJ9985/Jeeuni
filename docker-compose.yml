@@ -1,0 +1,59 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:16
+    container_name: jeeuni-postgres
+    restart: always
+    environment:
+      POSTGRES_DB: jeeuni_db
+      POSTGRES_USER: jeeuni
+      POSTGRES_PASSWORD: qwer1234
+    networks:
+      - backend_net
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: jeeuni-backend
+    restart: always
+    env_file:
+      - ./backend/.env.local
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    networks:
+      - frontend_net
+      - backend_net
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: jeeuni-frontend
+    restart: always
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    networks:
+      - frontend_net
+
+# -------------------------
+# NETWORK DEFINITIONS
+# -------------------------
+networks:
+  frontend_net:
+    driver: bridge
+  backend_net:
+    driver: bridge
+
+# -------------------------
+# VOLUME DEFINITIONS
+# -------------------------
+volumes:
+  postgres_data:
