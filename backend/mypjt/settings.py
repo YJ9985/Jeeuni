@@ -8,12 +8,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # DJANGO_ENV: local / prod (기본값은 local)
 DJANGO_ENV = os.getenv("DJANGO_ENV", "local")
 
-# env 파일 경로 결정
 if DJANGO_ENV == "prod":
-    env_path = BASE_DIR / ".env.prod"
+    # ✅ ECS / 서버에서는 .env 파일 읽지 않고, "환경변수"만 사용
+    SECRET_KEY = os.environ["SECRET_KEY"]  # 없으면 바로 에러 내게
+    DEBUG = False
 else:
-    # default: local 개발환경
+    # ✅ 로컬 개발 환경에서만 .env.local 읽기
     env_path = BASE_DIR / ".env.local"
+    load_dotenv(env_path)
+
+    SECRET_KEY = os.getenv("SECRET_KEY", "dev-secret-key")  # 로컬용 기본값
+    DEBUG = True
 
 # 이미 OS에 들어있는 값은 건드리지 않도록 override=False
 load_dotenv(env_path, override=False)
