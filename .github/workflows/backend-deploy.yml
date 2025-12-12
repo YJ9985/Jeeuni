@@ -43,10 +43,10 @@ jobs:
       # 1) Task Definition 업데이트 + Service 배포
       - name: Deploy backend to ECS (update task definition & service)
         env:
-          ECS_CLUSTER: ${{ secrets.ECS_CLUSTER }}                 # jeeuni-cluster
-          ECS_SERVICE: ${{ secrets.ECS_SERVICE }}                 # jeeuni-backend-task-service
-          TASK_DEFINITION_FAMILY: ${{ secrets.TASK_DEFINITION_FAMILY }}  # jeeuni-backend-task
-          CONTAINER_NAME: ${{ secrets.CONTAINER_NAME }}           # backend
+          ECS_CLUSTER: ${{ secrets.ECS_CLUSTER }}                 
+          ECS_SERVICE: ${{ secrets.ECS_SERVICE }}                 
+          TASK_DEFINITION_FAMILY: ${{ secrets.TASK_DEFINITION_FAMILY }}  
+          CONTAINER_NAME: ${{ secrets.CONTAINER_NAME }}          
           NEW_IMAGE: ${{ env.ECR_BACKEND_REPO }}:${{ github.sha }}
         run: |
           set -euo pipefail
