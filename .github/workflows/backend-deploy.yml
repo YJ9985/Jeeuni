@@ -1,0 +1,135 @@
+name: Backend CD - Build, Push, Deploy, Migrate
+
+on:
+  push:
+    branches: [ "main" ]
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  AWS_REGION: ap-northeast-2
+  ECR_BACKEND_REPO: 948638133962.dkr.ecr.ap-northeast-2.amazonaws.com/jeeuni-backend
+
+jobs:
+  deploy-backend:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::948638133962:role/GitHubActions-ECR-ECS
+          role-session-name: github-actions-jeeuni
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Login to Amazon ECR
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Build and push backend image
+        run: |
+          set -euo pipefail
+          BACKEND_TAG_SHA=${ECR_BACKEND_REPO}:${GITHUB_SHA}
+          BACKEND_TAG_LATEST=${ECR_BACKEND_REPO}:latest
+
+          docker build -t "$BACKEND_TAG_SHA" -t "$BACKEND_TAG_LATEST" ./backend
+          docker push "$BACKEND_TAG_SHA"
+          docker push "$BACKEND_TAG_LATEST"
+
+      # 1) Task Definition 업데이트 + Service 배포
+      - name: Deploy backend to ECS (update task definition & service)
+        env:
+          ECS_CLUSTER: ${{ secrets.ECS_CLUSTER }}                 # jeeuni-cluster
+          ECS_SERVICE: ${{ secrets.ECS_SERVICE }}                 # jeeuni-backend-task-service
+          TASK_DEFINITION_FAMILY: ${{ secrets.TASK_DEFINITION_FAMILY }}  # jeeuni-backend-task
+          CONTAINER_NAME: ${{ secrets.CONTAINER_NAME }}           # backend
+          NEW_IMAGE: ${{ env.ECR_BACKEND_REPO }}:${{ github.sha }}
+        run: |
+          set -euo pipefail
+          echo "Deploying image: ${NEW_IMAGE}"
+
+          aws ecs describe-task-definition \
+            --task-definition "${TASK_DEFINITION_FAMILY}" \
+            --query "taskDefinition" \
+            --output json > taskdef.json
+
+          python - << 'PY'
+          import json, os
+          td = json.load(open("taskdef.json", "r", encoding="utf-8"))
+
+          for k in ["taskDefinitionArn","revision","status","requiresAttributes","compatibilities","registeredAt","registeredBy"]:
+              td.pop(k, None)
+
+          cname = os.environ["CONTAINER_NAME"]
+          new_image = os.environ["NEW_IMAGE"]
+
+          updated = False
+          for c in td.get("containerDefinitions", []):
+              if c.get("name") == cname:
+                  c["image"] = new_image
+                  updated = True
+          if not updated:
+              raise SystemExit(f"Container name '{cname}' not found in task definition.")
+
+          json.dump(td, open("taskdef.rendered.json", "w", encoding="utf-8"), indent=2)
+          print("Rendered taskdef.rendered.json with image:", new_image)
+          PY
+
+          NEW_TD_ARN=$(aws ecs register-task-definition \
+            --cli-input-json file://taskdef.rendered.json \
+            --query "taskDefinition.taskDefinitionArn" \
+            --output text)
+
+          echo "NEW_TD_ARN=${NEW_TD_ARN}" >> $GITHUB_ENV
+          echo "New task definition ARN: ${NEW_TD_ARN}"
+
+          aws ecs update-service \
+            --cluster "${ECS_CLUSTER}" \
+            --service "${ECS_SERVICE}" \
+            --task-definition "${NEW_TD_ARN}"
+
+          aws ecs wait services-stable \
+            --cluster "${ECS_CLUSTER}" \
+            --services "${ECS_SERVICE}"
+
+      # 2) 배포된 "같은 revision"으로 migrate 수행 (옵션 A)
+      - name: Run Django migrate as one-off ECS task
+        env:
+          ECS_CLUSTER: ${{ secrets.ECS_CLUSTER }}
+          CONTAINER_NAME: ${{ secrets.CONTAINER_NAME }}
+        run: |
+          set -euo pipefail
+          echo "Running migrate on ECS one-off task..."
+
+          TASK_ARN=$(aws ecs run-task \
+            --cluster "${ECS_CLUSTER}" \
+            --launch-type FARGATE \
+            --task-definition "${NEW_TD_ARN}" \
+            --count 1 \
+            --network-configuration "awsvpcConfiguration={subnets=[subnet-02ca4f4158a0652dc,subnet-08f6ade2d76d8e338,subnet-04a29d2f7345b1f7a,subnet-01bf4d1f56c9a6c65],securityGroups=[sg-0cbcb920332f95bf9],assignPublicIp=ENABLED}" \
+            --overrides "{\"containerOverrides\":[{\"name\":\"${CONTAINER_NAME}\",\"command\":[\"python\",\"manage.py\",\"migrate\",\"--noinput\"]}]}" \
+            --query "tasks[0].taskArn" \
+            --output text)
+
+          echo "Migrate task ARN: ${TASK_ARN}"
+          aws ecs wait tasks-stopped --cluster "${ECS_CLUSTER}" --tasks "${TASK_ARN}"
+
+          EXIT_CODE=$(aws ecs describe-tasks \
+            --cluster "${ECS_CLUSTER}" \
+            --tasks "${TASK_ARN}" \
+            --query "tasks[0].containers[?name=='${CONTAINER_NAME}'].exitCode | [0]" \
+            --output text)
+
+          echo "Migrate exit code: ${EXIT_CODE}"
+
+          if [ "${EXIT_CODE}" != "0" ]; then
+            echo "Migrate failed. Dumping task details:"
+            aws ecs describe-tasks --cluster "${ECS_CLUSTER}" --tasks "${TASK_ARN}"
+            exit 1
+          fi
+
+          echo "Migrate succeeded."
