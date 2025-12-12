@@ -3,6 +3,7 @@ from django.urls import path, include
 from django.views.generic import RedirectView
 from django.conf import settings
 from django.conf.urls.static import static
+from .views import health_check
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -10,4 +11,5 @@ urlpatterns = [
     path('', RedirectView.as_view(url='/accounts/', permanent=False)),
     path('api/v1/', include('books.urls')),
     path('api/v2/', include('literacy.urls')),
+    path('api/health/', health_check),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

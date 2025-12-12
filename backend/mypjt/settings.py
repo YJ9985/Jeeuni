@@ -2,46 +2,130 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 from datetime import timedelta
+from django.core.exceptions import ImproperlyConfigured
+import hashlib
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# DJANGO_ENV: local / prod (기본값은 local)
-DJANGO_ENV = os.getenv("DJANGO_ENV", "local")
+# 실행 환경: local / prod
+DJANGO_ENV = os.environ.get("DJANGO_ENV", "local")
 
-# 1) env 파일 경로 결정
-if DJANGO_ENV == "prod":
-    env_path = BASE_DIR / ".env.prod"
-else:
-    env_path = BASE_DIR / ".env.local"
+# 로컬일 때만 .env.local 로드
+if DJANGO_ENV != "prod":
+    load_dotenv(BASE_DIR / ".env.local", override=True)
 
-# 2) env 파일 로드 (파일이 없어도 python-dotenv는 조용히 넘어감)
-load_dotenv(env_path, override=False)
+# DEBUG 플래그
+DEBUG = DJANGO_ENV != "prod"
 
-# 3) 공통 환경변수 읽기
-SECRET_KEY = os.getenv("SECRET_KEY")
-if DJANGO_ENV == "prod" and not SECRET_KEY:
-    # prod에서는 무조건 SECRET_KEY가 있어야 하니까 방어 로직
-    raise ImproperlyConfigured("SECRET_KEY must be set in environment for prod")
+# SECRET_KEY
+SECRET_KEY = os.environ.get("SECRET_KEY")
+if not SECRET_KEY:
+    raise ImproperlyConfigured("SECRET_KEY environment variable must be set.")
 
-DEBUG = DJANGO_ENV != "prod"   # prod이면 False, 나머지는 True
+# ALLOWED_HOSTS / CORS / CSRF
+ALLOWED_HOSTS = [
+    h.strip()
+    for h in os.environ.get("ALLOWED_HOSTS", "172.31.38.28,localhost,127.0.0.1").split(",")
+    if h.strip()
+]
 
-# CORS/CSRF
-CORS_ALLOWED_ORIGINS = [h.strip() for h in os.getenv(
-    "CORS_ALLOWED_ORIGINS",
-    "http://localhost:5173,http://127.0.0.1:5173"
-).split(",") if h.strip()]
+CORS_ALLOWED_ORIGINS = [
+    h.strip()
+    for h in os.environ.get(
+        "CORS_ALLOWED_ORIGINS",
+        "http://localhost:5173,http://127.0.0.1:5173",
+    ).split(",")
+    if h.strip()
+]
 CORS_ALLOW_CREDENTIALS = True
-CSRF_TRUSTED_ORIGINS = [h.strip() for h in os.getenv(
-    "CSRF_TRUSTED_ORIGINS",
-    "http://localhost:5173,http://127.0.0.1:5173"
-).split(",") if h.strip()]
+
+CSRF_TRUSTED_ORIGINS = [
+    h.strip()
+    for h in os.environ.get(
+        "CSRF_TRUSTED_ORIGINS",
+        "http://localhost:5173,http://127.0.0.1:5173",
+    ).split(",")
+    if h.strip()
+]
+
+# Database
+if DJANGO_ENV == "prod":
+    from urllib.parse import unquote
+    
+    # 환경변수 원본 값 가져오기 (strip 전)
+    DB_NAME = os.environ.get("DB_NAME", "")
+    DB_USER = os.environ.get("DB_USER", "")
+    DB_PASSWORD_RAW = os.environ.get("DB_PASSWORD", "")
+    # URL 디코딩 시도 (인코딩되어 있으면 디코딩, 아니면 그대로)
+    DB_PASSWORD = unquote(DB_PASSWORD_RAW) if DB_PASSWORD_RAW else ""
+    DB_HOST = os.environ.get("DB_HOST", "")
+    DB_PORT = os.environ.get("DB_PORT", "5432")
+
+    # 필수 값 체크
+    required_keys = {
+        "DB_NAME": DB_NAME,
+        "DB_USER": DB_USER,
+        "DB_PASSWORD": DB_PASSWORD,
+        "DB_HOST": DB_HOST
+    }
+    
+    print("\n" + "="*60)
+    print("DATABASE CONFIGURATION DEBUG")
+    print("="*60)
+    
+    for key, value in required_keys.items():
+        if not value:
+            raise ImproperlyConfigured(f"{key} is required in environment for production")
+        print(f"{key}: {'<SET>' if value else '<EMPTY>'}")
+        print(f"  - Length: {len(value)}")
+        print(f"  - Has leading space: {value != value.lstrip()}")
+        print(f"  - Has trailing space: {value != value.rstrip()}")
+        if key == "DB_PASSWORD":
+            # 비밀번호 해시만 출력 (보안)
+            pw_hash = hashlib.sha256(value.encode("utf-8")).hexdigest()
+            print(f"  - SHA256: {pw_hash[:16]}...")
+            # 특수문자 포함 여부 체크
+            special_chars = set("!@#$%^&*()[]{}|\\:;\"'<>,.?/~`")
+            has_special = any(c in special_chars for c in value)
+            print(f"  - Contains special chars: {has_special}")
+    
+    print(f"DB_PORT: {DB_PORT}")
+    print("="*60 + "\n")
+
+    # 공백 제거 후 DB 설정
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": DB_NAME.strip(),
+            "USER": DB_USER.strip(),
+            "PASSWORD": DB_PASSWORD.strip(),
+            "HOST": DB_HOST.strip(),
+            "PORT": DB_PORT,
+            "OPTIONS": {
+                "sslmode": "require",
+                "connect_timeout": 10,
+            },
+            # 연결 풀 설정 추가
+            "CONN_MAX_AGE": 600,
+        }
+    }
+
+else:
+    # 로컬: SQLite
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
+    }
+
 
 # Application definition
 INSTALLED_APPS = [
     'accounts',
     'books',
     'literacy',
-     # 서드파티 앱
+    # 서드파티 앱
     'rest_framework',
     'rest_framework.authtoken',
     'rest_framework_simplejwt',
@@ -74,7 +158,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # 추가: allauth 미들웨어
     'allauth.account.middleware.AccountMiddleware',
 ]
 
@@ -100,36 +183,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mypjt.wsgi.application'
 
-# Database (기본: SQLite → 운영에서는 .env에서 override 권장)
-db_engine = os.getenv("DB_ENGINE", "sqlite")  # 기본은 sqlite
-
-if db_engine == "postgres":
-    ENGINE = "django.db.backends.postgresql"
-elif db_engine == "mysql":
-    ENGINE = "django.db.backends.mysql"
-else:
-    ENGINE = "django.db.backends.sqlite3"
-
-if ENGINE == "django.db.backends.sqlite3":
-    DATABASES = {
-        "default": {
-            "ENGINE": ENGINE,
-            "NAME": BASE_DIR / "db.sqlite3",
-        }
-    }
-else:
-    DATABASES = {
-        "default": {
-            "ENGINE": ENGINE,
-            "NAME": os.getenv("DB_NAME"),
-            "USER": os.getenv("DB_USER"),
-            "PASSWORD": os.getenv("DB_PASSWORD"),
-            "HOST": os.getenv("DB_HOST"),
-            "PORT": os.getenv("DB_PORT"),
-        }
-    }
-
-
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -146,13 +199,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 LANGUAGE_CODE = 'ko-kr'
 TIME_ZONE = 'Asia/Seoul'
 USE_I18N = True
 USE_TZ = True
-
 
 # Static files
 STATIC_URL = '/static/'
@@ -160,7 +211,6 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
-
 
 # Auth / Allauth
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
@@ -175,7 +225,6 @@ SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
-
 
 # Social login
 SOCIALACCOUNT_PROVIDERS = {
@@ -211,13 +260,11 @@ SOCIALACCOUNT_FORMS = {
 SOCIALACCOUNT_ADAPTER = 'accounts.adapters.MySocialAccountAdapter'
 SOCIALACCOUNT_LOGIN_ON_GET = True
 
-
 # DRF / JWT
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
-
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
     ],
@@ -232,7 +279,6 @@ SIMPLE_JWT = {
 
 REST_USE_JWT = True
 
-
 # Security (HTTPS 배포 시 적용)
 CSRF_COOKIE_SECURE = not DEBUG
 SESSION_COOKIE_SECURE = not DEBUG
@@ -240,16 +286,31 @@ SECURE_HSTS_SECONDS = 31536000 if not DEBUG else 0
 SECURE_HSTS_INCLUDE_SUBDOMAINS = not DEBUG
 SECURE_HSTS_PRELOAD = not DEBUG
 
-
 # Logging
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {message}',
+            'style': '{',
+        },
+    },
     'handlers': {
-        'console': {'class': 'logging.StreamHandler'},
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose',
+        },
     },
     'root': {
         'handlers': ['console'],
         'level': 'INFO',
+    },
+    'loggers': {
+        'django.db.backends': {
+            'handlers': ['console'],
+            'level': 'DEBUG' if DEBUG else 'INFO',
+            'propagate': False,
+        },
     },
 }
