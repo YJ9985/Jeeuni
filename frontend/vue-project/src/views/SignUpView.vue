@@ -202,7 +202,6 @@
       email: email.value,
       password: password1.value
     }
-    console.log('payload:', payload)
 
     accountStore.signUp(payload)
     alert('회원가입이 완료되었습니다!')
@@ -212,11 +211,9 @@
   const cancelSignUp = function () {
     // router.back()     // 뒤로가기
     router.push('/')
-    console.log('취소 클릭')
   }
 
   const verifyEmail = () => {
-    console.log('이메일 인증 클릭', email.value)
     isVerified.value = true
   }
 
