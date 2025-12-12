@@ -307,7 +307,7 @@ export default {
     const selectedTextOptions = ref([])
 
     // API 기본 설정 및 인증 토큰
-    const API_BASE = 'http://127.0.0.1:8000/api/v1'
+    const API_BASE = import.meta.env.VITE_API_BASE_URL
     
     // Axios 인터셉터로 인증 토큰 추가
     const setupAxiosInterceptors = () => {
@@ -347,7 +347,7 @@ export default {
     // 카테고리 목록 가져오기
     const fetchCategories = async () => {
       try {
-        const response = await axios.get(`${API_BASE}/categories/`)
+        const response = await axios.get(`${API_BASE}/api/v1/categories/`)
         categories.value = response.data
       } catch (error) {
         console.error('카테고리 로딩 실패:', error)
@@ -374,7 +374,7 @@ export default {
       loadingMessage.value = '이미지에서 텍스트 추출 중...'
       
       try {
-        const response = await axios.post(`${API_BASE}/posts/create/books/upload/`, formData, {
+        const response = await axios.post(`${API_BASE}/api/v1/posts/create/books/upload/`, formData, {
           headers: {
             'Content-Type': 'multipart/form-data'
           }
@@ -441,7 +441,7 @@ export default {
       isLoading.value = true
       loadingMessage.value = '도서 검색 중...'
       try {
-        const response = await axios.get(`${API_BASE}/posts/create/books/search/`, {
+        const response = await axios.get(`${API_BASE}/api/v1/posts/create/books/search/`, {
           params: { q: searchQuery.value }
         })
         internalBooks.value = response.data
@@ -468,7 +468,7 @@ export default {
       isLoading.value = true
       loadingMessage.value = '외부 도서 검색 중...'
       try {
-        const response = await axios.get(`${API_BASE}/posts/create/books/library/`, {
+        const response = await axios.get(`${API_BASE}/api/v1/posts/create/books/library/`, {
           params: { q: searchQuery.value }
         })
         
@@ -517,7 +517,7 @@ export default {
           category: selectedCategoryId.value
         }
         
-        const response = await axios.post(`${API_BASE}/posts/create/books/library/add/`, bookData)
+        const response = await axios.post(`${API_BASE}/api/v1/posts/create/books/library/add/`, bookData)
         console.log('API 응답:', response.data);
         
         if (response.data && response.data.id) {
@@ -564,7 +564,7 @@ export default {
           book_pk: selectedBook.value.id
         }
 
-        const response = await axios.post(`${API_BASE}/posts/create/`, postPayload)
+        const response = await axios.post(`${API_BASE}/api/v1/posts/create/`, postPayload)
         
         alert('포스트가 성공적으로 등록되었습니다!')
         emit('post-created', response.data)

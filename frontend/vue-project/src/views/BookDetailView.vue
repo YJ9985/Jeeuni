@@ -116,7 +116,7 @@ export default {
     const showPosts = ref(false)
 
     // 도서 상세 정보 가져오기
-    const API_BASE = 'http://127.0.0.1:8000/api/v1'
+    const API_BASE = import.meta.env.VITE_API_BASE_URL
 
     const fetchBookDetail = async () => {
       try {
@@ -124,7 +124,7 @@ export default {
         error.value = null
         
         const bookId = route.params.id
-        const response = await axios.get(`${API_BASE}/books/${bookId}/`)
+        const response = await axios.get(`${API_BASE}/api/v1/books/${bookId}/`)
         
         book.value = response.data
       } catch (err) {

@@ -30,7 +30,7 @@ import { useAccountStore } from '@/stores/accounts'
 const route = useRoute()
 const router = useRouter()
 const accountStore = useAccountStore()
-
+const API_BASE = import.meta.env.VITE_API_BASE_URL
 const accessToken   = ref('')
 const birthDate     = ref('1999-01-01')
 const showBirthDateForm = ref(false)
@@ -68,7 +68,7 @@ onMounted(async () => {
 
     // 1-2) 백엔드에 카카오 토큰 전달
     const res = await axios.post(
-      'http://127.0.0.1:8000/accounts/signup/kakao/',
+      `${API_BASE}/accounts/signup/kakao/`,
       { access_token: accessToken.value }
     )
 
@@ -106,7 +106,7 @@ async function submitProfileUpdate() {
 
   try {
     const updateRes = await axios.post(
-      'http://127.0.0.1:8000/accounts/profile/update/',
+      `${API_BASE}/accounts/profile/update/`,
       {
         access_token: accessToken.value,
         birth_date:   birthDate.value,

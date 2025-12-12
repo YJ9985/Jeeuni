@@ -99,7 +99,7 @@ export default {
     const error = ref('')
     const isSearchActive = ref(false)
 
-    const API_BASE = 'http://127.0.0.1:8000/api/v1'
+    const API_BASE = import.meta.env.VITE_API_BASE_URL
 
     // API 호출 함수
     const searchBooks = async () => {
@@ -112,7 +112,7 @@ export default {
       error.value = ''
       
       try {
-        const response = await axios.get(`${API_BASE}/posts/create/books/search/`, {
+        const response = await axios.get(`${API_BASE}/api/v1/posts/create/books/search/`, {
           params: { q: searchQuery.value }
         })
         books.value = response.data
@@ -137,7 +137,7 @@ export default {
       error.value = ''
       
       try {
-        const response = await axios.get(`${API_BASE}/books/`)
+        const response = await axios.get(`${API_BASE}/api/v1/books/`)
         books.value = response.data
         
       } catch (err) {

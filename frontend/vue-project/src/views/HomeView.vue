@@ -127,7 +127,7 @@ const accountStore = useAccountStore()
 const selected = ref(0)
 const allBooks = ref([])
 const currentIndex = ref(0)
-const API_BASE = 'http://127.0.0.1:8000/api/v1'
+const API_BASE = import.meta.env.VITE_API_BASE_URL
 let timer = null
 
 function goToTest() {
@@ -147,7 +147,7 @@ function onSelect(idx){
 // 2) API 로드
 onMounted(async ()=>{
   try {
-    const res = await axios.get(`${API_BASE}/books/`)
+    const res = await axios.get(`${API_BASE}/api/v1/books/`)
     allBooks.value = res.data
   } catch (error) {
     console.error('Failed to load books:', error)

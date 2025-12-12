@@ -80,6 +80,8 @@
   const loading = ref(true)
   const error = ref(null)
 
+  const API_BASE = import.meta.env.VITE_API_BASE_URL
+
   console.log(recommendations)
   console.log(recommendations.value)
   
@@ -102,7 +104,7 @@
 
     try {
       const response = await axios.post(
-        'http://127.0.0.1:8000/api/v2/books/recommend/',
+        `${API_BASE}/api/v2/books/recommend/`,
         { 'test_result': answersMap },
         { headers: { 'Content-Type': 'application/json' } }
       )

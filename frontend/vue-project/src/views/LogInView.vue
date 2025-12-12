@@ -77,7 +77,8 @@
   
   const router = useRouter()
   const accountStore = useAccountStore()
-
+  const API_BASE = import.meta.env.VITE_API_BASE_URL
+  
   const email = ref('')
   const password = ref('')
   const birthDate = ref('1999-01-01')
@@ -94,6 +95,8 @@
 
     router.push({ name: 'LogInView' })
   }
+
+
 
   // 일반로그인
   // const logIn = function () {
@@ -124,7 +127,7 @@
 
       // 2) 백엔드에 access_token만 전송 → 가입 여부 판단
       const res = await axios.post(
-        'http://127.0.0.1:8000/accounts/signup/google/',
+        `${API_BASE}/accounts/signup/google/`,
         { access_token: access_token }
       )
 
@@ -176,7 +179,7 @@
 
     try {
       const updateRes = await axios.post(
-        'http://127.0.0.1:8000/accounts/profile/update/',
+        `${API_BASE}/accounts/profile/update/`,
         {
           access_token: accessToken.value,
           birth_date: birthDate.value

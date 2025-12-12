@@ -140,7 +140,7 @@ export default {
     const showBookInfo = ref(false)
 
     // 포스트 상세 정보 가져오기
-    const API_BASE = 'http://127.0.0.1:8000/api/v1'
+    const API_BASE = import.meta.env.VITE_API_BASE_URL
 
     const fetchPost = async () => {
       try {
@@ -148,7 +148,7 @@ export default {
         error.value = null
         
         const postId = route.params.id
-        const response = await axios.get(`${API_BASE}/posts/${postId}/`)
+        const response = await axios.get(`${API_BASE}/api/v1/posts/${postId}/`)
 
         post.value = response.data
       } catch (err) {
@@ -165,7 +165,7 @@ export default {
       try {
         submittingComment.value = true
         const postId = route.params.id
-        const response = await axios.post(`${API_BASE}/posts/${postId}/comments/`, {
+        const response = await axios.post(`${API_BASE}/api/v1/posts/${postId}/comments/`, {
           content: newComment.value
         })
         
@@ -188,7 +188,7 @@ export default {
       
       try {
         const postId = route.params.id
-        await axios.delete(`${API_BASE}/posts/${postId}/`)
+        await axios.delete(`${API_BASE}/api/v1/posts/${postId}/`)
         alert('포스트가 삭제되었습니다.')
         router.push(`/books/${post.value.book.id}`)
       } catch (err) {
@@ -202,7 +202,7 @@ export default {
       
       try {
         const postId = route.params.id
-        await axios.delete(`${API_BASE}/posts/${postId}/comments/${commentId}/`)
+        await axios.delete(`${API_BASE}/api/v1/posts/${postId}/comments/${commentId}/`)
         // Remove comment from list
         post.value.comments = post.value.comments.filter(comment => comment.id !== commentId)
       } catch (err) {

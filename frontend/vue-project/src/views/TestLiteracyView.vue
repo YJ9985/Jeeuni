@@ -107,6 +107,7 @@
   const testResultStore = useTestResultStore()
   const accountStore = useAccountStore()
   const isLogin = computed(() => accountStore.isLogin)
+  const API_BASE = import.meta.env.VITE_API_BASE_URL
 
   // 반응형 데이터
   const questions = ref([])
@@ -128,7 +129,7 @@
     try {
       loading.value = true
       // Django API에서 모든 문제 가져오기 (올바른 URL 사용)
-      const response = await axios.get('http://127.0.0.1:8000/api/v2/literacy/test/')
+      const response = await axios.get(`${API_BASE}/api/v2/literacy/test/`)
       questions.value = response.data
       
       // 첫 번째 문제의 답안 불러오기
@@ -212,7 +213,7 @@
     try {
       loading.value = true
       const response = await axios.post(
-        'http://127.0.0.1:8000/api/v2/literacy/evaluate/',
+        `${API_BASE}/api/v2/literacy/evaluate/`,
         answersMap.value,
         {headers: {'Content-Type': 'application/json'}}
       )

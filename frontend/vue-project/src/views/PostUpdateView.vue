@@ -67,7 +67,7 @@ export default {
     const router = useRouter()
     const postId = route.params.id
 
-    const API_BASE = 'http://127.0.0.1:8000/api/v1'
+    const API_BASE = import.meta.env.VITE_API_BASE_URL
 
     const postData = reactive({
       title: '',
@@ -83,7 +83,7 @@ export default {
 
     const fetchPost = async () => {
       try {
-        const response = await axios.get(`${API_BASE}/posts/${postId}/`)
+        const response = await axios.get(`${API_BASE}/api/v1/posts/${postId}/`)
         postData.title = response.data.title
         postData.content = response.data.content
         console.log(response.data.book)
@@ -99,7 +99,7 @@ export default {
       if (!canSubmit.value) return
 
       try {
-        const response = await axios.put(`${API_BASE}/posts/${postId}/`, {
+        const response = await axios.put(`${API_BASE}/api/v1/posts/${postId}/`, {
           title: postData.title,
           content: postData.content
         })
