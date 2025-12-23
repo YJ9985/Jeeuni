@@ -23,11 +23,20 @@ if not SECRET_KEY:
     raise ImproperlyConfigured("SECRET_KEY environment variable must be set.")
 
 # ALLOWED_HOSTS / CORS / CSRF
-ALLOWED_HOSTS = [
-    h.strip()
-    for h in os.environ.get("ALLOWED_HOSTS", "172.31.38.28,localhost,127.0.0.1").split(",")
-    if h.strip()
-]
+raw_hosts = os.environ.get(
+    "ALLOWED_HOSTS",
+    "172.31.38.28,localhost,127.0.0.1"
+)
+
+if raw_hosts.strip() == "*":
+    ALLOWED_HOSTS = ["*"]
+else:
+    ALLOWED_HOSTS = [
+        h.strip()
+        for h in raw_hosts.split(",")
+        if h.strip()
+    ]
+
 
 CORS_ALLOWED_ORIGINS = [
     h.strip()
