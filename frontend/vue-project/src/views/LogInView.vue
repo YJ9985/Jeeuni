@@ -137,7 +137,7 @@
         accountStore.setToken(res.data.access, res.data.refresh)
         localStorage.setItem('access', res.data.access)
         localStorage.setItem('refresh', res.data.refresh)
-        console.log('구글 로그인 완료')
+        // console.log('구글 로그인 완료')
         router.replace({ name: 'HomeView' })
 
       } else if (res.data.status === 'need_birth_date') {
