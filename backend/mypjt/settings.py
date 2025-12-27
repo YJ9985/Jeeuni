@@ -27,14 +27,17 @@ if not SECRET_KEY:
     raise ImproperlyConfigured("SECRET_KEY environment variable must be set.")
 
 # ALLOWED_HOSTS / CORS / CSRF
-raw_hosts = os.environ.get("ALLOWED_HOSTS", "localhost,127.0.0.1").strip()
+raw_hosts = os.environ.get("ALLOWED_HOSTS", "")
 
 hosts = [h.strip() for h in raw_hosts.split(",") if h.strip()]
 
-if raw_hosts == "*" or "*" in hosts:
+# '*'가 하나라도 포함되면 전체 허용으로 강제
+if "*" in hosts:
     ALLOWED_HOSTS = ["*"]
 else:
-    ALLOWED_HOSTS = hosts
+    # 비어있으면 최소값 세팅(로컬 안전장치)z
+    ALLOWED_HOSTS = hosts or ["localhost", "127.0.0.1"]
+
 
 
 CORS_ALLOWED_ORIGINS = [
