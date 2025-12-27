@@ -5,6 +5,10 @@ from datetime import timedelta
 from django.core.exceptions import ImproperlyConfigured
 import hashlib
 
+import logging
+logger = logging.getLogger("django")
+logger.warning("ALLOWED_HOSTS resolved => %s (raw=%s)", ALLOWED_HOSTS, raw_hosts)
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # 실행 환경: local / prod
@@ -23,19 +27,14 @@ if not SECRET_KEY:
     raise ImproperlyConfigured("SECRET_KEY environment variable must be set.")
 
 # ALLOWED_HOSTS / CORS / CSRF
-raw_hosts = os.environ.get(
-    "ALLOWED_HOSTS",
-    "172.31.38.28,localhost,127.0.0.1"
-)
+raw_hosts = os.environ.get("ALLOWED_HOSTS", "localhost,127.0.0.1").strip()
 
-if raw_hosts.strip() == "*":
+hosts = [h.strip() for h in raw_hosts.split(",") if h.strip()]
+
+if raw_hosts == "*" or "*" in hosts:
     ALLOWED_HOSTS = ["*"]
 else:
-    ALLOWED_HOSTS = [
-        h.strip()
-        for h in raw_hosts.split(",")
-        if h.strip()
-    ]
+    ALLOWED_HOSTS = hosts
 
 
 CORS_ALLOWED_ORIGINS = [
