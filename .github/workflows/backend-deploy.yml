@@ -36,13 +36,9 @@ jobs:
           BACKEND_TAG_SHA=${ECR_BACKEND_REPO}:${GITHUB_SHA}
           BACKEND_TAG_LATEST=${ECR_BACKEND_REPO}:latest
           
-          # --platform linux/arm64 옵션 추가 & --push 옵션 사용
-          docker buildx build \
-            --platform linux/arm64 \
-            -t "$BACKEND_TAG_SHA" \
-            -t "$BACKEND_TAG_LATEST" \
-            --push \
-            ./backend
+          docker build -t "$BACKEND_TAG_SHA" -t "$BACKEND_TAG_LATEST" ./backend
+          docker push "$BACKEND_TAG_SHA"
+          docker push "$BACKEND_TAG_LATEST"
 
       # 1) Task Definition 업데이트 + Service 배포
       - name: Deploy backend to ECS (update task definition & service)
