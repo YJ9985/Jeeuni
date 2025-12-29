@@ -1,13 +1,10 @@
 from pathlib import Path
 import os
+import sys
 from dotenv import load_dotenv
 from datetime import timedelta
 from django.core.exceptions import ImproperlyConfigured
 import hashlib
-
-import logging
-logger = logging.getLogger("django")
-logger.warning("ALLOWED_HOSTS resolved => %s (raw=%s)", ALLOWED_HOSTS, raw_hosts)
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,20 +22,32 @@ DEBUG = DJANGO_ENV != "prod"
 SECRET_KEY = os.environ.get("SECRET_KEY")
 if not SECRET_KEY:
     raise ImproperlyConfigured("SECRET_KEY environment variable must be set.")
-
-# ALLOWED_HOSTS / CORS / CSRF
+# [수정된 부분 시작] ---------------------------------------------------------
+# 1. 환경변수 가져오기
 raw_hosts = os.environ.get("ALLOWED_HOSTS", "")
 
-hosts = [h.strip() for h in raw_hosts.split(",") if h.strip()]
+# 2. 확실한 디버깅을 위한 로그 (CloudWatch에서 바로 보이도록 flush 강제)
+print(f"\n{'='*50}")
+print(f"!!! DEBUG: ALLOWED_HOSTS CHECK !!!")
+print(f"1. os.environ.get('ALLOWED_HOSTS') Type: {type(raw_hosts)}")
+print(f"2. os.environ.get('ALLOWED_HOSTS') Value: '{raw_hosts}'") # 따옴표 안에 값을 넣어 공백/빈값 확인
 
-# '*'가 하나라도 포함되면 전체 허용으로 강제
+# 3. 호스트 리스트 파싱
+hosts = [h.strip() for h in raw_hosts.split(",") if h.strip()]
+print(f"3. Parsed hosts list: {hosts}")
+
+# 4. 최종 할당 로직
 if "*" in hosts:
     ALLOWED_HOSTS = ["*"]
+    print("4. Decision: WILDCARD DETECTED -> Set to ['*']")
 else:
-    # 비어있으면 최소값 세팅(로컬 안전장치)z
+    # 비어있으면 로컬 호스트 설정
     ALLOWED_HOSTS = hosts or ["localhost", "127.0.0.1"]
+    print(f"4. Decision: Fallback/Specific -> Set to {ALLOWED_HOSTS}")
 
-
+print(f"{'='*50}\n")
+sys.stdout.flush() # 로그 버퍼 강제 출력
+# [수정된 부분 끝] -----------------------------------------------------------
 
 CORS_ALLOWED_ORIGINS = [
     h.strip()
