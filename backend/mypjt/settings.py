@@ -23,19 +23,16 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 if not SECRET_KEY:
     raise ImproperlyConfigured("SECRET_KEY environment variable must be set.")
 
-# Allowed Hosts 설정
+# ALLOWED_HOSTS 설정
 raw_hosts = os.environ.get("ALLOWED_HOSTS", "")
 
 hosts = [h.strip() for h in raw_hosts.split(",") if h.strip()]
-print(f"3. Parsed hosts list: {hosts}")
 
 if "*" in hosts:
     ALLOWED_HOSTS = ["*"]
-    print("4. Decision: WILDCARD DETECTED -> Set to ['*']")
 else:
     # 비어있으면 로컬 호스트 설정
     ALLOWED_HOSTS = hosts or ["localhost", "127.0.0.1"]
-    print(f"4. Decision: Fallback/Specific -> Set to {ALLOWED_HOSTS}")
 
 
 CORS_ALLOWED_ORIGINS = [
@@ -77,29 +74,17 @@ if DJANGO_ENV == "prod":
         "DB_PASSWORD": DB_PASSWORD,
         "DB_HOST": DB_HOST
     }
-    
-    print("\n" + "="*60)
-    print("DATABASE CONFIGURATION DEBUG")
-    print("="*60)
+
     
     for key, value in required_keys.items():
         if not value:
             raise ImproperlyConfigured(f"{key} is required in environment for production")
-        print(f"{key}: {'<SET>' if value else '<EMPTY>'}")
-        print(f"  - Length: {len(value)}")
-        print(f"  - Has leading space: {value != value.lstrip()}")
-        print(f"  - Has trailing space: {value != value.rstrip()}")
         if key == "DB_PASSWORD":
             # 비밀번호 해시만 출력 (보안)
             pw_hash = hashlib.sha256(value.encode("utf-8")).hexdigest()
-            print(f"  - SHA256: {pw_hash[:16]}...")
             # 특수문자 포함 여부 체크
             special_chars = set("!@#$%^&*()[]{}|\\:;\"'<>,.?/~`")
             has_special = any(c in special_chars for c in value)
-            print(f"  - Contains special chars: {has_special}")
-    
-    print(f"DB_PORT: {DB_PORT}")
-    print("="*60 + "\n")
 
     # 공백 제거 후 DB 설정
     DATABASES = {
@@ -277,7 +262,15 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
     ],
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+    ],
 }
+
+if DEBUG:
+    REST_FRAMEWORK['DEFAULT_RENDERER_CLASSES'].append(
+        'rest_framework.renderers.BrowsableAPIRenderer'
+    )
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=int(os.getenv("JWT_ACCESS_MIN", "30"))),
