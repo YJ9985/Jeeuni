@@ -37,9 +37,8 @@ jobs:
       - name: Build
         env:
           VITE_API_URL: "http://jeeuni-alb-890381289.ap-northeast-2.elb.amazonaws.com"
-        run: |
-          cd frontend
-          npm run build
+        working-directory: ./frontend/vue-project
+        run: npm run build
 
       # 4. AWS 권한 가져오기 (백엔드 때 썼던 역할 재사용)
       - name: Configure AWS credentials
