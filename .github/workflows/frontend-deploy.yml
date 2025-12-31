@@ -52,8 +52,7 @@ jobs:
       - name: Deploy to S3
         env:
           S3_BUCKET: ${{ secrets.S3_BUCKET_NAME }}
-        run: |
-          aws s3 sync ./frontend/dist s3://$S3_BUCKET --delete
+        run: aws s3 sync ./frontend/vue-project/dist s3://$S3_BUCKET --delete
 
       # 6. CloudFront 캐시 삭제 (사용자가 즉시 새 버전 보게 함)
       - name: Invalidate CloudFront Cache

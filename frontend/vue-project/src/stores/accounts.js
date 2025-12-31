@@ -57,9 +57,6 @@ export const useAccountStore = defineStore("account", () => {
         email,
         password,
       })
-      .then(() => {
-        console.log("회원가입 완료");
-      })
       .catch((err) => {
         console.log("회원가입 실패:", err.response?.data || err.message);
       });
