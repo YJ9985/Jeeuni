@@ -59,7 +59,7 @@ onMounted(async () => {
       new URLSearchParams({
         grant_type:   'authorization_code',
         client_id:    import.meta.env.VITE_APP_KAKAO_CLIENT_ID,
-        redirect_uri: 'http://localhost:5173/accounts/kakao/login/callback/',
+        redirect_uri: `${window.location.origin}/accounts/kakao/login/callback`,
         code,
       }),
       { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
@@ -116,7 +116,7 @@ async function submitProfileUpdate() {
     localStorage.setItem('access_token', updateRes.data.access)
     localStorage.setItem('refresh_token', updateRes.data.refresh)
     accountStore.setToken(updateRes.data.access, updateRes.data.refresh)
-    console.log('Kakao signup response:', updateRes.data)
+    // console.log('Kakao signup response:', updateRes.data)
 
     router.replace({ name: 'HomeView' })
 
@@ -171,33 +171,33 @@ async function submitProfileUpdate() {
   color: #818B7E;
   margin-top: 0px;
   padding-top: 0px;
-  margin-bottom: 52px;
+  margin-bottom: 4%;
 }
 
 .modal-label{
   font-size: 14px;
   color: #454E42;
   text-align: left;
-  margin-bottom: 4px;
+  margin-bottom: 1%;
 }
 
 .modal-input{
   border: 1px solid #454E42;
   width: 100%;
-  height: 56px;
+  height: 32%;
   padding: 0 12px;
   border-radius: 12px;
   font-size: 14px;
   color: #454E42;
   box-sizing: border-box;
-  margin-bottom: 52px;
+  margin-bottom: 4%;
 }
 
 .modal-button-group{
   display: flex;
   justify-content: center;
   gap: 32px;
-  margin-top: 12px;
+  margin-top: 4%;
 }
 
 .modal-button {

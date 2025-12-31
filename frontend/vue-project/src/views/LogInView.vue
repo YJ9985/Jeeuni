@@ -18,11 +18,11 @@
         <div class="help-link">
           <RouterLink :to="{ name: 'SignUpView'}">이메일 찾기</RouterLink>
         </div>
-        <span>|</span>
+        <span class="divider">|</span>
         <div class="help-link">
           <RouterLink :to="{ name: 'SignUpView'}">비밀번호 찾기</RouterLink>
         </div>
-        <span>|</span>
+        <span class="divider">|</span>
         <div class="help-link">
           <RouterLink :to="{ name: 'SignUpView'}">회원가입</RouterLink>
         </div>
@@ -44,7 +44,6 @@
       <Teleport to="body">
       <div v-if="showModal">
         <div class="modal-overlay"></div>
-
           <div class="modal-container">
             <div class="modal-title">소셜 로그인 진행중...</div>
           <div class="modal-subtitle">더 나은 서비스 제공을 위해 생년월일 입력이 필요해요.</div>
@@ -162,7 +161,7 @@
 
   // 카카오 설정
   const KAKAO_CLIENT_ID = import.meta.env.VITE_APP_KAKAO_CLIENT_ID
-  const REDIRECT_URI = 'http://localhost:5173/accounts/kakao/login/callback/'
+  const REDIRECT_URI = `${window.location.origin}/accounts/kakao/login/callback`
 
   function kakaoLogin() {
     if (!KAKAO_CLIENT_ID) {
@@ -190,7 +189,7 @@
       localStorage.setItem('refresh', updateRes.data.refresh)
       accountStore.setToken(updateRes.data.access, updateRes.data.refresh)
 
-      console.log('회원가입 완료')
+      // console.log('회원가입 완료')
       router.replace({ name: 'HomeView' })
 
     } catch(err){
@@ -202,6 +201,16 @@
   }
 </script>
 
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8faf5 0%, #c0cfba 100%);
+    background-attachment: fixed;
+  }
+</style>
+
 <style scoped>
   .container {
     display: flex;
@@ -210,7 +219,6 @@
     margin: 0;
     min-height: 100vh;
     min-width: 100vw;
-    background: linear-gradient(135deg, #f8faf5 0%, #c0cfba 100%);
   }
 
   .full-wrapper {
@@ -228,7 +236,7 @@
     letter-spacing: 0;
     line-height: 48px;
     white-space: nowrap;
-    margin-bottom: 24%;
+    margin-bottom: 16%;
   }
 
   .form-group {
@@ -273,6 +281,22 @@
   .help-link {
     flex: 1;
     text-align: center;
+    color:#818B7E;
+  }
+
+  .help-link a {
+    text-decoration: none;
+    color: inherit;        
+    font-weight: 200;
+  }
+
+  .help-link a:hover {
+    font-weight: 500;
+  }
+
+  .divider {
+    color: #818B7E;
+    margin: 0 12px;
   }
 
   .social-login {
@@ -280,8 +304,8 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin-top: 80px;
-    margin-bottom: 48px;
+    margin-top: 40px;
+    margin-bottom: 40px;
   }
 
   .social-login::before, .social-login::after {
@@ -296,7 +320,8 @@
   display: flex;
   justify-content: center;
   gap: 8%;
-  margin-top: 16px;
+  margin-top: 6%;
+  margin-bottom: 6%;
 }
 
 .google-button {
@@ -377,33 +402,33 @@
   color: #818B7E;
   margin-top: 0px;
   padding-top: 0px;
-  margin-bottom: 52px;
+  margin-bottom: 4%;
 }
 
 .modal-label{
   font-size: 14px;
   color: #454E42;
   text-align: left;
-  margin-bottom: 4px;
+  margin-bottom: 1%;
 }
 
 .modal-input{
   border: 1px solid #454E42;
   width: 100%;
-  height: 56px;
+  height: 32%;
   padding: 0 12px;
   border-radius: 12px;
   font-size: 14px;
   color: #454E42;
   box-sizing: border-box;
-  margin-bottom: 52px;
+  margin-bottom: 4%;
 }
 
 .modal-button-group{
   display: flex;
   justify-content: center;
   gap: 32px;
-  margin-top: 12px;
+  margin-top: 4%;
 }
 
 .modal-button {
