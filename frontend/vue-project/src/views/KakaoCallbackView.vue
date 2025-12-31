@@ -116,7 +116,7 @@ async function submitProfileUpdate() {
     localStorage.setItem('access_token', updateRes.data.access)
     localStorage.setItem('refresh_token', updateRes.data.refresh)
     accountStore.setToken(updateRes.data.access, updateRes.data.refresh)
-    console.log('Kakao signup response:', updateRes.data)
+    // console.log('Kakao signup response:', updateRes.data)
 
     router.replace({ name: 'HomeView' })
 

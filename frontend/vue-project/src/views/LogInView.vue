@@ -189,7 +189,7 @@
       localStorage.setItem('refresh', updateRes.data.refresh)
       accountStore.setToken(updateRes.data.access, updateRes.data.refresh)
 
-      console.log('회원가입 완료')
+      // console.log('회원가입 완료')
       router.replace({ name: 'HomeView' })
 
     } catch(err){
