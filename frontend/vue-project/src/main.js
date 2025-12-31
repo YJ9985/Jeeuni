@@ -21,8 +21,6 @@ app.use(GoogleLoginPlugin, {
   clientId: import.meta.env.VITE_APP_GOOGLE_CLIENT_ID,
 })
 
-console.log('VITE_APP_GOOGLE_CLIENT_ID:', clientId)
-
 app.mount('#app')
 
 function isTokenExpired(token) {

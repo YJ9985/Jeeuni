@@ -55,64 +55,47 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 
 # Database
+# [통합 설정] 로컬/배포 구분 없이 PostgreSQL 사용
+from urllib.parse import unquote
+
+# 환경변수 가져오기
+DB_NAME = os.environ.get("DB_NAME", "")
+DB_USER = os.environ.get("DB_USER", "")
+DB_PASSWORD_RAW = os.environ.get("DB_PASSWORD", "")
+DB_PASSWORD = unquote(DB_PASSWORD_RAW) if DB_PASSWORD_RAW else ""
+DB_HOST = os.environ.get("DB_HOST", "")
+DB_PORT = os.environ.get("DB_PORT", "5432")
+
+# 디버깅: 로컬에서 DB 연결 정보 확인용 (비밀번호는 숨김)
+if DEBUG:
+    print(f"🗄️  Database Config: Host={DB_HOST}, Port={DB_PORT}, Name={DB_NAME}, User={DB_USER}")
+
+# 필수 값 체크 (프로덕션에서는 엄격하게)
 if DJANGO_ENV == "prod":
-    from urllib.parse import unquote
-    
-    # 환경변수 원본 값 가져오기 (strip 전)
-    DB_NAME = os.environ.get("DB_NAME", "")
-    DB_USER = os.environ.get("DB_USER", "")
-    DB_PASSWORD_RAW = os.environ.get("DB_PASSWORD", "")
-    # URL 디코딩 시도 (인코딩되어 있으면 디코딩, 아니면 그대로)
-    DB_PASSWORD = unquote(DB_PASSWORD_RAW) if DB_PASSWORD_RAW else ""
-    DB_HOST = os.environ.get("DB_HOST", "")
-    DB_PORT = os.environ.get("DB_PORT", "5432")
-
-    # 필수 값 체크
-    required_keys = {
-        "DB_NAME": DB_NAME,
-        "DB_USER": DB_USER,
-        "DB_PASSWORD": DB_PASSWORD,
-        "DB_HOST": DB_HOST
-    }
-
-    
+    required_keys = {"DB_NAME": DB_NAME, "DB_USER": DB_USER, "DB_PASSWORD": DB_PASSWORD, "DB_HOST": DB_HOST}
     for key, value in required_keys.items():
         if not value:
             raise ImproperlyConfigured(f"{key} is required in environment for production")
-        if key == "DB_PASSWORD":
-            # 비밀번호 해시만 출력 (보안)
-            pw_hash = hashlib.sha256(value.encode("utf-8")).hexdigest()
-            # 특수문자 포함 여부 체크
-            special_chars = set("!@#$%^&*()[]{}|\\:;\"'<>,.?/~`")
-            has_special = any(c in special_chars for c in value)
 
-    # 공백 제거 후 DB 설정
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.postgresql",
-            "NAME": DB_NAME.strip(),
-            "USER": DB_USER.strip(),
-            "PASSWORD": DB_PASSWORD.strip(),
-            "HOST": DB_HOST.strip(),
-            "PORT": DB_PORT,
-            "OPTIONS": {
-                "sslmode": "require",
-                "connect_timeout": 10,
-            },
-            # 연결 풀 설정 추가
-            "CONN_MAX_AGE": 600,
-        }
+# 공통 데이터베이스 설정
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": DB_NAME,
+        "USER": DB_USER,
+        "PASSWORD": DB_PASSWORD,
+        "HOST": DB_HOST,
+        "PORT": DB_PORT,
+        "OPTIONS": {
+            "connect_timeout": 10,
+        },
     }
+}
 
-else:
-    # 로컬: SQLite
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": BASE_DIR / "db.sqlite3",
-        }
-    }
-
+# [프로덕션 전용 옵션] 배포 환경일 때만 보안/성능 옵션 추가
+if DJANGO_ENV == "prod":
+    DATABASES["default"]["OPTIONS"]["sslmode"] = "require"
+    DATABASES["default"]["CONN_MAX_AGE"] = 600
 
 # Application definition
 INSTALLED_APPS = [
@@ -146,6 +129,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
