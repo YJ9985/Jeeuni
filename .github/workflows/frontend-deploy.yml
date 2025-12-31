@@ -29,8 +29,8 @@ jobs:
 
       # 2. 의존성 설치
       - name: Install dependencies
+        working-directory: ./frontend
         run: |
-          cd frontend
           npm ci
 
       # 3. 빌드 (백엔드 주소 연결)
