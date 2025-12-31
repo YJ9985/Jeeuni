@@ -21,7 +21,6 @@ export const useAccountStore = defineStore("account", () => {
     localStorage.setItem("refresh", refresh);
 
     api.defaults.headers.common["Authorization"] = `Bearer ${access}`;
-    // console.log("토큰 저장 및 Authorization 헤더 설정 완료");
   };
 
   /** 공통: 토큰 삭제 */
@@ -31,7 +30,6 @@ export const useAccountStore = defineStore("account", () => {
     localStorage.removeItem("access");
     localStorage.removeItem("refresh");
     delete api.defaults.headers.common["Authorization"];
-    // console.log("토큰 삭제 및 Authorization 헤더 제거 완료");
   };
 
   /** 앱 시작 시 localStorage → store로 로딩 */
@@ -44,7 +42,6 @@ export const useAccountStore = defineStore("account", () => {
 
     if (access) {
       api.defaults.headers.common["Authorization"] = `Bearer ${access}`;
-      // console.log("저장된 토큰으로 Authorization 헤더 복원");
     }
   };
 
@@ -75,7 +72,6 @@ export const useAccountStore = defineStore("account", () => {
     return api
       .post("/accounts/login/", { email, password })
       .then((res) => {
-        // console.log("로그인 완료", res.data);
         setToken(res.data.access, res.data.refresh);
         return { access: res.data.access, refresh: res.data.refresh };
       })
@@ -106,9 +102,8 @@ export const useAccountStore = defineStore("account", () => {
 
       clearToken();
       router.push({ name: "LogInView" });
-      // console.log("로그아웃 성공");
     } catch (err) {
-      // console.error("로그아웃 실패:", err.response?.data || err.message);
+      console.error("로그아웃 실패:", err.response?.data || err.message);
     }
   };
 
@@ -123,7 +118,6 @@ export const useAccountStore = defineStore("account", () => {
       });
 
       setToken(res.data.access, res.data.refresh);
-      // console.log("구글 로그인 성공:", res.data);
       router.push({ name: "mainView" });
     } catch (err) {
       console.error("구글 로그인 실패:", err.response?.data || err.message);
