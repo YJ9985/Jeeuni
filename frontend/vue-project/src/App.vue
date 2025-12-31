@@ -141,7 +141,7 @@ html, body {
   height: 24px;
   width: 1px;
   background-color: #818B7E;
-  margin-right: 0; /* 필요 시 좌우 여백 조절 가능 */
+  margin-right: 0;
   pointer-events: none;
 }
 </style>
