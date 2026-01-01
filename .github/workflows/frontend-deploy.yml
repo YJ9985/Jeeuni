@@ -39,7 +39,7 @@ jobs:
           VITE_API_URL: "http://jeeuni-alb-890381289.ap-northeast-2.elb.amazonaws.com"
           VITE_APP_KAKAO_CLIENT_ID: ${{ secrets.VITE_APP_KAKAO_CLIENT_ID }}
           VITE_APP_GOOGLE_CLIENT_ID: ${{ secrets.VITE_APP_GOOGLE_CLIENT_ID }}
-        working-directory: ./frontend
+        working-directory: ./frontend/vue-project
         run: npm run build
 
       # 4. AWS 권한 가져오기 (백엔드 때 썼던 역할 재사용)
