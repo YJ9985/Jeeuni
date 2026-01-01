@@ -85,12 +85,6 @@ onMounted(async () => {
       localStorage.setItem('refresh', res.data.refresh)
       accountStore.setToken(res.data.access, res.data.refresh)
       
-      // console.log({
-      //   'logged_in': '로그인 성공!',
-      //   'created': '회원가입 및 로그인 성공!',
-      //   'linked': '카카오 계정 연결 및 로그인 성공!'
-      // }[res.data.status])
-      
       router.replace({ name: 'HomeView' })
     }
 
