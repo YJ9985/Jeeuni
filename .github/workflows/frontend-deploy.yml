@@ -4,8 +4,8 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - 'frontend/**'  # frontend 폴더가 바뀔 때만 실행 (프로젝트 구조에 맞게 수정 가능)
-      - '.github/workflows/deploy-frontend.yml'
+      - 'frontend/**'
+      - '.github/workflows/frontend-deploy.yml'
 
 permissions:
   id-token: write
@@ -33,16 +33,16 @@ jobs:
         run: |
           npm ci
 
-      # 3. 빌드 (백엔드 주소 연결)
+      # 3. 빌드
       - name: Build
         env:
-          VITE_API_URL: "http://jeeuni-alb-890381289.ap-northeast-2.elb.amazonaws.com"
+          VITE_API_BASE_URL: "http://jeeuni-alb-890381289.ap-northeast-2.elb.amazonaws.com"
           VITE_APP_KAKAO_CLIENT_ID: ${{ secrets.VITE_APP_KAKAO_CLIENT_ID }}
           VITE_APP_GOOGLE_CLIENT_ID: ${{ secrets.VITE_APP_GOOGLE_CLIENT_ID }}
         working-directory: ./frontend/vue-project
         run: npm run build
 
-      # 4. AWS 권한 가져오기 (백엔드 때 썼던 역할 재사용)
+      # 4. AWS 권한 가져오기
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -50,13 +50,13 @@ jobs:
           role-session-name: github-actions-frontend
           aws-region: ap-northeast-2
 
-      # 5. S3에 파일 업로드 (기존 것 지우고 새 것 업로드)
+      # 5. S3에 파일 업로드
       - name: Deploy to S3
         env:
           S3_BUCKET: ${{ secrets.S3_BUCKET_NAME }}
         run: aws s3 sync ./frontend/vue-project/dist s3://$S3_BUCKET --delete
 
-      # 6. CloudFront 캐시 삭제 (사용자가 즉시 새 버전 보게 함)
+      # 6. CloudFront 캐시 삭제
       - name: Invalidate CloudFront Cache
         env:
           CLOUDFRONT_ID: ${{ secrets.CLOUDFRONT_DIST_ID }}
