@@ -1,16 +1,14 @@
-version: "3.9"
-
 services:
   db:
     image: postgres:16
     container_name: jeeuni-postgres
     restart: always
-    environment:
-      POSTGRES_DB: jeeuni_db
-      POSTGRES_USER: jeeuni
-      POSTGRES_PASSWORD: qwer1234
+    env_file:
+      - ./.env
     networks:
       - backend_net
+    ports:
+      - "127.0.0.1:5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
@@ -22,6 +20,8 @@ services:
     restart: always
     env_file:
       - ./backend/.env.local
+    environment:
+      DB_HOST: db
     ports:
       - "8000:8000"
     depends_on:
@@ -34,6 +34,8 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
+      args:
+        VITE_API_BASE_URL: http://127.0.0.1:8000
     container_name: jeeuni-frontend
     restart: always
     ports:
