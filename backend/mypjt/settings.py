@@ -203,6 +203,14 @@ SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+FRONTEND_BASE_URL = os.environ.get(
+    "FRONTEND_BASE_URL",
+    "http://127.0.0.1:8080" if DEBUG else "https://www.jeeuni.site",
+).rstrip("/")
+FRONTEND_LOGIN_URL = os.environ.get(
+    "FRONTEND_LOGIN_URL",
+    f"{FRONTEND_BASE_URL}/accounts/login",
+)
 
 # Social login
 SOCIALACCOUNT_PROVIDERS = {

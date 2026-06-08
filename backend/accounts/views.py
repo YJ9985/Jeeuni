@@ -5,8 +5,10 @@ from rest_framework import status
 from rest_framework_simplejwt.tokens import RefreshToken, TokenError
 from rest_framework_simplejwt.token_blacklist.models import BlacklistedToken, OutstandingToken
 from rest_framework.permissions import IsAuthenticated
+from django.conf import settings
 from django.contrib.auth import get_user_model, authenticate
 from django.contrib.auth.hashers import check_password
+from django.shortcuts import redirect
 # from django.contrib.auth.models import BaseUserManager
 import random
 import string
@@ -43,6 +45,9 @@ class LocalSignupView(APIView):
 
 class LocalLoginView(APIView):
     permission_classes = [AllowAny]
+
+    def get(self, request):
+        return redirect(settings.FRONTEND_LOGIN_URL)
 
     def post(self, request):
         serializer = LoginSerializer(data=request.data)
